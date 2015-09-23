@@ -1,0 +1,937 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsSeries" targetNamespace="http://tempuri.org/dsSeries.xsd" xmlns:mstns="http://tempuri.org/dsSeries.xsd" xmlns="http://tempuri.org/dsSeries.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="dbSeriesConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="dbSeriesConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Interface_TheTvDB.Properties.Settings.GlobalReference.Default.dbSeriesConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SER_SeriesTableAdapter" GeneratorDataComponentClassName="SER_SeriesTableAdapter" Name="SER_Series" UserDataComponentName="SER_SeriesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbSeriesConnectionString (Settings)" DbObjectName="dbSeries.dbo.SER_Series" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[SER_Series] WHERE (([SER_ID] = @Original_SER_ID) AND ([SER_Created] = @Original_SER_Created) AND ((@IsNull_SER_Changed = 1 AND [SER_Changed] IS NULL) OR ([SER_Changed] = @Original_SER_Changed)) AND ((@IsNull_SER_Deleted = 1 AND [SER_Deleted] IS NULL) OR ([SER_Deleted] = @Original_SER_Deleted)) AND ((@IsNull_SER_theTVDB_ID = 1 AND [SER_theTVDB_ID] IS NULL) OR ([SER_theTVDB_ID] = @Original_SER_theTVDB_ID)) AND ((@IsNull_SER_Zap2It_ID = 1 AND [SER_Zap2It_ID] IS NULL) OR ([SER_Zap2It_ID] = @Original_SER_Zap2It_ID)) AND ((@IsNull_SER_imdb_ID = 1 AND [SER_imdb_ID] IS NULL) OR ([SER_imdb_ID] = @Original_SER_imdb_ID)) AND ((@IsNull_SER_Name_German = 1 AND [SER_Name_German] IS NULL) OR ([SER_Name_German] = @Original_SER_Name_German)) AND ((@IsNull_SER_Name_English = 1 AND [SER_Name_English] IS NULL) OR ([SER_Name_English] = @Original_SER_Name_English)) AND ((@IsNull_SER_FirstAired_German = 1 AND [SER_FirstAired_German] IS NULL) OR ([SER_FirstAired_German] = @Original_SER_FirstAired_German)) AND ((@IsNull_SER_FirstAired_English = 1 AND [SER_FirstAired_English] IS NULL) OR ([SER_FirstAired_English] = @Original_SER_FirstAired_English)) AND ((@IsNull_SER_Rate = 1 AND [SER_Rate] IS NULL) OR ([SER_Rate] = @Original_SER_Rate)) AND ((@IsNull_SER_RateCount = 1 AND [SER_RateCount] IS NULL) OR ([SER_RateCount] = @Original_SER_RateCount)) AND ((@IsNull_SER_imdb_Rate = 1 AND [SER_imdb_Rate] IS NULL) OR ([SER_imdb_Rate] = @Original_SER_imdb_Rate)) AND ((@IsNull_SER_imdb_RateCount = 1 AND [SER_imdb_RateCount] IS NULL) OR ([SER_imdb_RateCount] = @Original_SER_imdb_RateCount)) AND ((@IsNull_SER_RunTime = 1 AND [SER_RunTime] IS NULL) OR ([SER_RunTime] = @Original_SER_RunTime)) AND ((@IsNull_SER_State = 1 AND [SER_State] IS NULL) OR ([SER_State] = @Original_SER_State)) AND ((@IsNull_SER_ProductionDateFrom = 1 AND [SER_ProductionDateFrom] IS NULL) OR ([SER_ProductionDateFrom] = @Original_SER_ProductionDateFrom)) AND ((@IsNull_SER_ProductionDateTo = 1 AND [SER_ProductionDateTo] IS NULL) OR ([SER_ProductionDateTo] = @Original_SER_ProductionDateTo)) AND ((@IsNull_SER_Country = 1 AND [SER_Country] IS NULL) OR ([SER_Country] = @Original_SER_Country)) AND ((@IsNull_SER_Languages = 1 AND [SER_Languages] IS NULL) OR ([SER_Languages] = @Original_SER_Languages)) AND ((@IsNull_SER_SeasonCount = 1 AND [SER_SeasonCount] IS NULL) OR ([SER_SeasonCount] = @Original_SER_SeasonCount)) AND ((@IsNull_SER_EpisodesCount = 1 AND [SER_EpisodesCount] IS NULL) OR ([SER_EpisodesCount] = @Original_SER_EpisodesCount)) AND ((@IsNull_SER_FavouritesCount = 1 AND [SER_FavouritesCount] IS NULL) OR ([SER_FavouritesCount] = @Original_SER_FavouritesCount)) AND ((@IsNull_SER_DIR = 1 AND [SER_DIR] IS NULL) OR ([SER_DIR] = @Original_SER_DIR)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SER_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SER_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Changed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Changed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Changed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Deleted" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Deleted" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Deleted" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_theTVDB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_theTVDB_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Zap2It_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Zap2It_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Zap2It_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Zap2It_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_imdb_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Name_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Name_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Name_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Name_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_FirstAired_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FirstAired_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_FirstAired_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FirstAired_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_SER_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_imdb_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_SER_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_RunTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RunTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_RunTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RunTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_State" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_State" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_State" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_State" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_ProductionDateFrom" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_ProductionDateFrom" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_ProductionDateFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateFrom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_ProductionDateTo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_ProductionDateTo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_ProductionDateTo" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateTo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Country" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Country" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Country" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Country" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Languages" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Languages" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Languages" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_SeasonCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_SeasonCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_SeasonCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_SeasonCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_EpisodesCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_FavouritesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FavouritesCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_FavouritesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FavouritesCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_DIR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_DIR" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_DIR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DIR" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[SER_Series] ([SER_ID], [SER_Created], [SER_Changed], [SER_Deleted], [SER_theTVDB_ID], [SER_Zap2It_ID], [SER_imdb_ID], [SER_Name_German], [SER_Name_English], [SER_DescriptionShort_German], [SER_DescriptionShort_English], [SER_Description_German], [SER_Description_English], [SER_FirstAired_German], [SER_FirstAired_English], [SER_Rate], [SER_RateCount], [SER_imdb_Rate], [SER_imdb_RateCount], [SER_RunTime], [SER_State], [SER_Soundtrack], [SER_Trailer], [SER_ProductionDateFrom], [SER_ProductionDateTo], [SER_Country], [SER_Languages], [SER_Awards], [SER_Website], [SER_Facebook], [SER_Twitter], [SER_ImageLink], [SER_SeasonCount], [SER_EpisodesCount], [SER_FavouritesCount], [SER_DIR]) VALUES (@SER_ID, @SER_Created, @SER_Changed, @SER_Deleted, @SER_theTVDB_ID, @SER_Zap2It_ID, @SER_imdb_ID, @SER_Name_German, @SER_Name_English, @SER_DescriptionShort_German, @SER_DescriptionShort_English, @SER_Description_German, @SER_Description_English, @SER_FirstAired_German, @SER_FirstAired_English, @SER_Rate, @SER_RateCount, @SER_imdb_Rate, @SER_imdb_RateCount, @SER_RunTime, @SER_State, @SER_Soundtrack, @SER_Trailer, @SER_ProductionDateFrom, @SER_ProductionDateTo, @SER_Country, @SER_Languages, @SER_Awards, @SER_Website, @SER_Facebook, @SER_Twitter, @SER_ImageLink, @SER_SeasonCount, @SER_EpisodesCount, @SER_FavouritesCount, @SER_DIR);
+SELECT SER_ID, SER_Created, SER_Changed, SER_Deleted, SER_theTVDB_ID, SER_Zap2It_ID, SER_imdb_ID, SER_Name_German, SER_Name_English, SER_DescriptionShort_German, SER_DescriptionShort_English, SER_Description_German, SER_Description_English, SER_FirstAired_German, SER_FirstAired_English, SER_Rate, SER_RateCount, SER_imdb_Rate, SER_imdb_RateCount, SER_RunTime, SER_State, SER_Soundtrack, SER_Trailer, SER_ProductionDateFrom, SER_ProductionDateTo, SER_Country, SER_Languages, SER_Awards, SER_Website, SER_Facebook, SER_Twitter, SER_ImageLink, SER_SeasonCount, SER_EpisodesCount, SER_FavouritesCount, SER_DIR FROM SER_Series WHERE (SER_ID = @SER_ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SER_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Changed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Deleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Zap2It_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Zap2It_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_DescriptionShort_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DescriptionShort_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_DescriptionShort_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DescriptionShort_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Description_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Description_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Description_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Description_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SER_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SER_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_RunTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RunTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_State" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_State" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Soundtrack" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Soundtrack" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Trailer" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Trailer" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_ProductionDateFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_ProductionDateTo" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateTo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Country" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Country" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Languages" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Awards" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Awards" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Website" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Website" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Facebook" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Facebook" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Twitter" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Twitter" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_ImageLink" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_ImageLink" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_SeasonCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_SeasonCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_FavouritesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FavouritesCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_DIR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DIR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SER_ID, SER_Created, SER_Changed, SER_Deleted, SER_theTVDB_ID, SER_Zap2It_ID, SER_imdb_ID, SER_Name_German, SER_Name_English, SER_DescriptionShort_German, SER_DescriptionShort_English, SER_Description_German, SER_Description_English, SER_FirstAired_German, SER_FirstAired_English, SER_Rate, SER_RateCount, SER_imdb_Rate, SER_imdb_RateCount, SER_RunTime, SER_State, SER_Soundtrack, SER_Trailer, SER_ProductionDateFrom, SER_ProductionDateTo, SER_Country, SER_Languages, SER_Awards, SER_Website, SER_Facebook, SER_Twitter, SER_ImageLink, SER_SeasonCount, SER_EpisodesCount, SER_FavouritesCount, SER_DIR FROM dbo.SER_Series</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[SER_Series] SET [SER_ID] = @SER_ID, [SER_Created] = @SER_Created, [SER_Changed] = @SER_Changed, [SER_Deleted] = @SER_Deleted, [SER_theTVDB_ID] = @SER_theTVDB_ID, [SER_Zap2It_ID] = @SER_Zap2It_ID, [SER_imdb_ID] = @SER_imdb_ID, [SER_Name_German] = @SER_Name_German, [SER_Name_English] = @SER_Name_English, [SER_DescriptionShort_German] = @SER_DescriptionShort_German, [SER_DescriptionShort_English] = @SER_DescriptionShort_English, [SER_Description_German] = @SER_Description_German, [SER_Description_English] = @SER_Description_English, [SER_FirstAired_German] = @SER_FirstAired_German, [SER_FirstAired_English] = @SER_FirstAired_English, [SER_Rate] = @SER_Rate, [SER_RateCount] = @SER_RateCount, [SER_imdb_Rate] = @SER_imdb_Rate, [SER_imdb_RateCount] = @SER_imdb_RateCount, [SER_RunTime] = @SER_RunTime, [SER_State] = @SER_State, [SER_Soundtrack] = @SER_Soundtrack, [SER_Trailer] = @SER_Trailer, [SER_ProductionDateFrom] = @SER_ProductionDateFrom, [SER_ProductionDateTo] = @SER_ProductionDateTo, [SER_Country] = @SER_Country, [SER_Languages] = @SER_Languages, [SER_Awards] = @SER_Awards, [SER_Website] = @SER_Website, [SER_Facebook] = @SER_Facebook, [SER_Twitter] = @SER_Twitter, [SER_ImageLink] = @SER_ImageLink, [SER_SeasonCount] = @SER_SeasonCount, [SER_EpisodesCount] = @SER_EpisodesCount, [SER_FavouritesCount] = @SER_FavouritesCount, [SER_DIR] = @SER_DIR WHERE (([SER_ID] = @Original_SER_ID) AND ([SER_Created] = @Original_SER_Created) AND ((@IsNull_SER_Changed = 1 AND [SER_Changed] IS NULL) OR ([SER_Changed] = @Original_SER_Changed)) AND ((@IsNull_SER_Deleted = 1 AND [SER_Deleted] IS NULL) OR ([SER_Deleted] = @Original_SER_Deleted)) AND ((@IsNull_SER_theTVDB_ID = 1 AND [SER_theTVDB_ID] IS NULL) OR ([SER_theTVDB_ID] = @Original_SER_theTVDB_ID)) AND ((@IsNull_SER_Zap2It_ID = 1 AND [SER_Zap2It_ID] IS NULL) OR ([SER_Zap2It_ID] = @Original_SER_Zap2It_ID)) AND ((@IsNull_SER_imdb_ID = 1 AND [SER_imdb_ID] IS NULL) OR ([SER_imdb_ID] = @Original_SER_imdb_ID)) AND ((@IsNull_SER_Name_German = 1 AND [SER_Name_German] IS NULL) OR ([SER_Name_German] = @Original_SER_Name_German)) AND ((@IsNull_SER_Name_English = 1 AND [SER_Name_English] IS NULL) OR ([SER_Name_English] = @Original_SER_Name_English)) AND ((@IsNull_SER_FirstAired_German = 1 AND [SER_FirstAired_German] IS NULL) OR ([SER_FirstAired_German] = @Original_SER_FirstAired_German)) AND ((@IsNull_SER_FirstAired_English = 1 AND [SER_FirstAired_English] IS NULL) OR ([SER_FirstAired_English] = @Original_SER_FirstAired_English)) AND ((@IsNull_SER_Rate = 1 AND [SER_Rate] IS NULL) OR ([SER_Rate] = @Original_SER_Rate)) AND ((@IsNull_SER_RateCount = 1 AND [SER_RateCount] IS NULL) OR ([SER_RateCount] = @Original_SER_RateCount)) AND ((@IsNull_SER_imdb_Rate = 1 AND [SER_imdb_Rate] IS NULL) OR ([SER_imdb_Rate] = @Original_SER_imdb_Rate)) AND ((@IsNull_SER_imdb_RateCount = 1 AND [SER_imdb_RateCount] IS NULL) OR ([SER_imdb_RateCount] = @Original_SER_imdb_RateCount)) AND ((@IsNull_SER_RunTime = 1 AND [SER_RunTime] IS NULL) OR ([SER_RunTime] = @Original_SER_RunTime)) AND ((@IsNull_SER_State = 1 AND [SER_State] IS NULL) OR ([SER_State] = @Original_SER_State)) AND ((@IsNull_SER_ProductionDateFrom = 1 AND [SER_ProductionDateFrom] IS NULL) OR ([SER_ProductionDateFrom] = @Original_SER_ProductionDateFrom)) AND ((@IsNull_SER_ProductionDateTo = 1 AND [SER_ProductionDateTo] IS NULL) OR ([SER_ProductionDateTo] = @Original_SER_ProductionDateTo)) AND ((@IsNull_SER_Country = 1 AND [SER_Country] IS NULL) OR ([SER_Country] = @Original_SER_Country)) AND ((@IsNull_SER_Languages = 1 AND [SER_Languages] IS NULL) OR ([SER_Languages] = @Original_SER_Languages)) AND ((@IsNull_SER_SeasonCount = 1 AND [SER_SeasonCount] IS NULL) OR ([SER_SeasonCount] = @Original_SER_SeasonCount)) AND ((@IsNull_SER_EpisodesCount = 1 AND [SER_EpisodesCount] IS NULL) OR ([SER_EpisodesCount] = @Original_SER_EpisodesCount)) AND ((@IsNull_SER_FavouritesCount = 1 AND [SER_FavouritesCount] IS NULL) OR ([SER_FavouritesCount] = @Original_SER_FavouritesCount)) AND ((@IsNull_SER_DIR = 1 AND [SER_DIR] IS NULL) OR ([SER_DIR] = @Original_SER_DIR)));
+SELECT SER_ID, SER_Created, SER_Changed, SER_Deleted, SER_theTVDB_ID, SER_Zap2It_ID, SER_imdb_ID, SER_Name_German, SER_Name_English, SER_DescriptionShort_German, SER_DescriptionShort_English, SER_Description_German, SER_Description_English, SER_FirstAired_German, SER_FirstAired_English, SER_Rate, SER_RateCount, SER_imdb_Rate, SER_imdb_RateCount, SER_RunTime, SER_State, SER_Soundtrack, SER_Trailer, SER_ProductionDateFrom, SER_ProductionDateTo, SER_Country, SER_Languages, SER_Awards, SER_Website, SER_Facebook, SER_Twitter, SER_ImageLink, SER_SeasonCount, SER_EpisodesCount, SER_FavouritesCount, SER_DIR FROM SER_Series WHERE (SER_ID = @SER_ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SER_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SER_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Changed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Deleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Zap2It_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Zap2It_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_DescriptionShort_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DescriptionShort_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_DescriptionShort_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DescriptionShort_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Description_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Description_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Description_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Description_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SER_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@SER_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_RunTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RunTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_State" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_State" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Soundtrack" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Soundtrack" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Trailer" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Trailer" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_ProductionDateFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateFrom" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SER_ProductionDateTo" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateTo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Country" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Country" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Languages" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Awards" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Awards" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Website" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Website" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Facebook" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Facebook" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_Twitter" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Twitter" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_ImageLink" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_ImageLink" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_SeasonCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_SeasonCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SER_FavouritesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FavouritesCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SER_DIR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DIR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SER_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SER_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Changed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Changed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Changed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Deleted" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Deleted" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_Deleted" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_theTVDB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_theTVDB_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Zap2It_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Zap2It_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Zap2It_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Zap2It_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_imdb_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Name_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Name_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Name_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Name_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Name_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_FirstAired_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FirstAired_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_FirstAired_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FirstAired_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_SER_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_imdb_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_SER_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="SER_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_RunTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RunTime" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_RunTime" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_RunTime" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_State" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_State" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_State" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_State" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_ProductionDateFrom" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_ProductionDateFrom" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_ProductionDateFrom" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateFrom" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_ProductionDateTo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_ProductionDateTo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SER_ProductionDateTo" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SER_ProductionDateTo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Country" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Country" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Country" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Country" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_Languages" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_Languages" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_Languages" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_SeasonCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_SeasonCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_SeasonCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_SeasonCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_EpisodesCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_FavouritesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FavouritesCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SER_FavouritesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_FavouritesCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SER_DIR" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SER_DIR" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SER_DIR" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SER_DIR" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SER_ID" DataSetColumn="SER_ID" />
+              <Mapping SourceColumn="SER_Created" DataSetColumn="SER_Created" />
+              <Mapping SourceColumn="SER_Changed" DataSetColumn="SER_Changed" />
+              <Mapping SourceColumn="SER_Deleted" DataSetColumn="SER_Deleted" />
+              <Mapping SourceColumn="SER_theTVDB_ID" DataSetColumn="SER_theTVDB_ID" />
+              <Mapping SourceColumn="SER_Zap2It_ID" DataSetColumn="SER_Zap2It_ID" />
+              <Mapping SourceColumn="SER_imdb_ID" DataSetColumn="SER_imdb_ID" />
+              <Mapping SourceColumn="SER_Name_German" DataSetColumn="SER_Name_German" />
+              <Mapping SourceColumn="SER_Name_English" DataSetColumn="SER_Name_English" />
+              <Mapping SourceColumn="SER_DescriptionShort_German" DataSetColumn="SER_DescriptionShort_German" />
+              <Mapping SourceColumn="SER_DescriptionShort_English" DataSetColumn="SER_DescriptionShort_English" />
+              <Mapping SourceColumn="SER_Description_German" DataSetColumn="SER_Description_German" />
+              <Mapping SourceColumn="SER_Description_English" DataSetColumn="SER_Description_English" />
+              <Mapping SourceColumn="SER_FirstAired_German" DataSetColumn="SER_FirstAired_German" />
+              <Mapping SourceColumn="SER_FirstAired_English" DataSetColumn="SER_FirstAired_English" />
+              <Mapping SourceColumn="SER_Rate" DataSetColumn="SER_Rate" />
+              <Mapping SourceColumn="SER_RateCount" DataSetColumn="SER_RateCount" />
+              <Mapping SourceColumn="SER_imdb_Rate" DataSetColumn="SER_imdb_Rate" />
+              <Mapping SourceColumn="SER_imdb_RateCount" DataSetColumn="SER_imdb_RateCount" />
+              <Mapping SourceColumn="SER_RunTime" DataSetColumn="SER_RunTime" />
+              <Mapping SourceColumn="SER_State" DataSetColumn="SER_State" />
+              <Mapping SourceColumn="SER_Soundtrack" DataSetColumn="SER_Soundtrack" />
+              <Mapping SourceColumn="SER_Trailer" DataSetColumn="SER_Trailer" />
+              <Mapping SourceColumn="SER_ProductionDateFrom" DataSetColumn="SER_ProductionDateFrom" />
+              <Mapping SourceColumn="SER_ProductionDateTo" DataSetColumn="SER_ProductionDateTo" />
+              <Mapping SourceColumn="SER_Country" DataSetColumn="SER_Country" />
+              <Mapping SourceColumn="SER_Languages" DataSetColumn="SER_Languages" />
+              <Mapping SourceColumn="SER_Awards" DataSetColumn="SER_Awards" />
+              <Mapping SourceColumn="SER_Website" DataSetColumn="SER_Website" />
+              <Mapping SourceColumn="SER_Facebook" DataSetColumn="SER_Facebook" />
+              <Mapping SourceColumn="SER_Twitter" DataSetColumn="SER_Twitter" />
+              <Mapping SourceColumn="SER_ImageLink" DataSetColumn="SER_ImageLink" />
+              <Mapping SourceColumn="SER_SeasonCount" DataSetColumn="SER_SeasonCount" />
+              <Mapping SourceColumn="SER_EpisodesCount" DataSetColumn="SER_EpisodesCount" />
+              <Mapping SourceColumn="SER_FavouritesCount" DataSetColumn="SER_FavouritesCount" />
+              <Mapping SourceColumn="SER_DIR" DataSetColumn="SER_DIR" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SEA_SeasonsTableAdapter" GeneratorDataComponentClassName="SEA_SeasonsTableAdapter" Name="SEA_Seasons" UserDataComponentName="SEA_SeasonsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbSeriesConnectionString (Settings)" DbObjectName="dbSeries.dbo.SEA_Seasons" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[SEA_Seasons] WHERE (([SEA_ID] = @Original_SEA_ID) AND ([SEA_Created] = @Original_SEA_Created) AND ((@IsNull_SEA_Changed = 1 AND [SEA_Changed] IS NULL) OR ([SEA_Changed] = @Original_SEA_Changed)) AND ((@IsNull_SEA_Deleted = 1 AND [SEA_Deleted] IS NULL) OR ([SEA_Deleted] = @Original_SEA_Deleted)) AND ((@IsNull_SEA_theTVDB_ID = 1 AND [SEA_theTVDB_ID] IS NULL) OR ([SEA_theTVDB_ID] = @Original_SEA_theTVDB_ID)) AND ((@IsNull_SEA_imdb_ID = 1 AND [SEA_imdb_ID] IS NULL) OR ([SEA_imdb_ID] = @Original_SEA_imdb_ID)) AND ((@IsNull_SEA_SER = 1 AND [SEA_SER] IS NULL) OR ([SEA_SER] = @Original_SEA_SER)) AND ((@IsNull_SEA_Name_German = 1 AND [SEA_Name_German] IS NULL) OR ([SEA_Name_German] = @Original_SEA_Name_German)) AND ((@IsNull_SEA_Name_English = 1 AND [SEA_Name_English] IS NULL) OR ([SEA_Name_English] = @Original_SEA_Name_English)) AND ((@IsNull_SEA_Number = 1 AND [SEA_Number] IS NULL) OR ([SEA_Number] = @Original_SEA_Number)) AND ((@IsNull_SEA_OrderNumber = 1 AND [SEA_OrderNumber] IS NULL) OR ([SEA_OrderNumber] = @Original_SEA_OrderNumber)) AND ((@IsNull_SEA_EpisodesCount = 1 AND [SEA_EpisodesCount] IS NULL) OR ([SEA_EpisodesCount] = @Original_SEA_EpisodesCount)) AND ((@IsNull_SEA_NumberText = 1 AND [SEA_NumberText] IS NULL) OR ([SEA_NumberText] = @Original_SEA_NumberText)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SEA_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SEA_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEA_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Changed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Changed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEA_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Changed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Deleted" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Deleted" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEA_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Deleted" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_theTVDB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_theTVDB_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_imdb_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_imdb_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_SER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_SER" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_SER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_SER" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Name_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Name_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Name_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Name_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SEA_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_OrderNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_OrderNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SEA_OrderNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_OrderNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_EpisodesCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SEA_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_NumberText" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_NumberText" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_NumberText" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[SEA_Seasons] ([SEA_ID], [SEA_Created], [SEA_Changed], [SEA_Deleted], [SEA_theTVDB_ID], [SEA_imdb_ID], [SEA_SER], [SEA_Name_German], [SEA_Name_English], [SEA_Number], [SEA_OrderNumber], [SEA_EpisodesCount], [SEA_Description_German], [SEA_Description_English], [SEA_NumberText]) VALUES (@SEA_ID, @SEA_Created, @SEA_Changed, @SEA_Deleted, @SEA_theTVDB_ID, @SEA_imdb_ID, @SEA_SER, @SEA_Name_German, @SEA_Name_English, @SEA_Number, @SEA_OrderNumber, @SEA_EpisodesCount, @SEA_Description_German, @SEA_Description_English, @SEA_NumberText);
+SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_ID, SEA_SER, SEA_Name_German, SEA_Name_English, SEA_Number, SEA_OrderNumber, SEA_EpisodesCount, SEA_Description_German, SEA_Description_English, SEA_NumberText FROM SEA_Seasons WHERE (SEA_ID = @SEA_ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SEA_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SEA_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEA_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEA_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Changed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEA_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Deleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_SER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_SER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SEA_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SEA_OrderNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_OrderNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SEA_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Description_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Description_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Description_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Description_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_NumberText" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_ID, SEA_SER, SEA_Name_German, SEA_Name_English, SEA_Number, SEA_OrderNumber, SEA_EpisodesCount, SEA_Description_German, SEA_Description_English, SEA_NumberText FROM dbo.SEA_Seasons</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[SEA_Seasons] SET [SEA_ID] = @SEA_ID, [SEA_Created] = @SEA_Created, [SEA_Changed] = @SEA_Changed, [SEA_Deleted] = @SEA_Deleted, [SEA_theTVDB_ID] = @SEA_theTVDB_ID, [SEA_imdb_ID] = @SEA_imdb_ID, [SEA_SER] = @SEA_SER, [SEA_Name_German] = @SEA_Name_German, [SEA_Name_English] = @SEA_Name_English, [SEA_Number] = @SEA_Number, [SEA_OrderNumber] = @SEA_OrderNumber, [SEA_EpisodesCount] = @SEA_EpisodesCount, [SEA_Description_German] = @SEA_Description_German, [SEA_Description_English] = @SEA_Description_English, [SEA_NumberText] = @SEA_NumberText WHERE (([SEA_ID] = @Original_SEA_ID) AND ([SEA_Created] = @Original_SEA_Created) AND ((@IsNull_SEA_Changed = 1 AND [SEA_Changed] IS NULL) OR ([SEA_Changed] = @Original_SEA_Changed)) AND ((@IsNull_SEA_Deleted = 1 AND [SEA_Deleted] IS NULL) OR ([SEA_Deleted] = @Original_SEA_Deleted)) AND ((@IsNull_SEA_theTVDB_ID = 1 AND [SEA_theTVDB_ID] IS NULL) OR ([SEA_theTVDB_ID] = @Original_SEA_theTVDB_ID)) AND ((@IsNull_SEA_imdb_ID = 1 AND [SEA_imdb_ID] IS NULL) OR ([SEA_imdb_ID] = @Original_SEA_imdb_ID)) AND ((@IsNull_SEA_SER = 1 AND [SEA_SER] IS NULL) OR ([SEA_SER] = @Original_SEA_SER)) AND ((@IsNull_SEA_Name_German = 1 AND [SEA_Name_German] IS NULL) OR ([SEA_Name_German] = @Original_SEA_Name_German)) AND ((@IsNull_SEA_Name_English = 1 AND [SEA_Name_English] IS NULL) OR ([SEA_Name_English] = @Original_SEA_Name_English)) AND ((@IsNull_SEA_Number = 1 AND [SEA_Number] IS NULL) OR ([SEA_Number] = @Original_SEA_Number)) AND ((@IsNull_SEA_OrderNumber = 1 AND [SEA_OrderNumber] IS NULL) OR ([SEA_OrderNumber] = @Original_SEA_OrderNumber)) AND ((@IsNull_SEA_EpisodesCount = 1 AND [SEA_EpisodesCount] IS NULL) OR ([SEA_EpisodesCount] = @Original_SEA_EpisodesCount)) AND ((@IsNull_SEA_NumberText = 1 AND [SEA_NumberText] IS NULL) OR ([SEA_NumberText] = @Original_SEA_NumberText)));
+SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_ID, SEA_SER, SEA_Name_German, SEA_Name_English, SEA_Number, SEA_OrderNumber, SEA_EpisodesCount, SEA_Description_German, SEA_Description_English, SEA_NumberText FROM SEA_Seasons WHERE (SEA_ID = @SEA_ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@SEA_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SEA_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEA_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEA_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Changed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@SEA_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Deleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_SER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_SER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SEA_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SEA_OrderNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_OrderNumber" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@SEA_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Description_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Description_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_Description_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Description_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SEA_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_NumberText" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_SEA_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="SEA_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEA_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Changed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Changed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEA_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Changed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Deleted" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Deleted" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_SEA_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="SEA_Deleted" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_theTVDB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_theTVDB_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_imdb_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_imdb_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_SER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_SER" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_SER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_SER" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Name_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Name_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Name_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Name_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_Name_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SEA_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_OrderNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_OrderNumber" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SEA_OrderNumber" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_OrderNumber" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_EpisodesCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_SEA_EpisodesCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_EpisodesCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SEA_NumberText" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SEA_NumberText" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SEA_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SEA_NumberText" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SEA_ID" DataSetColumn="SEA_ID" />
+              <Mapping SourceColumn="SEA_Created" DataSetColumn="SEA_Created" />
+              <Mapping SourceColumn="SEA_Changed" DataSetColumn="SEA_Changed" />
+              <Mapping SourceColumn="SEA_Deleted" DataSetColumn="SEA_Deleted" />
+              <Mapping SourceColumn="SEA_theTVDB_ID" DataSetColumn="SEA_theTVDB_ID" />
+              <Mapping SourceColumn="SEA_imdb_ID" DataSetColumn="SEA_imdb_ID" />
+              <Mapping SourceColumn="SEA_SER" DataSetColumn="SEA_SER" />
+              <Mapping SourceColumn="SEA_Name_German" DataSetColumn="SEA_Name_German" />
+              <Mapping SourceColumn="SEA_Name_English" DataSetColumn="SEA_Name_English" />
+              <Mapping SourceColumn="SEA_Number" DataSetColumn="SEA_Number" />
+              <Mapping SourceColumn="SEA_OrderNumber" DataSetColumn="SEA_OrderNumber" />
+              <Mapping SourceColumn="SEA_EpisodesCount" DataSetColumn="SEA_EpisodesCount" />
+              <Mapping SourceColumn="SEA_Description_German" DataSetColumn="SEA_Description_German" />
+              <Mapping SourceColumn="SEA_Description_English" DataSetColumn="SEA_Description_English" />
+              <Mapping SourceColumn="SEA_NumberText" DataSetColumn="SEA_NumberText" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EPI_EpisodesTableAdapter" GeneratorDataComponentClassName="EPI_EpisodesTableAdapter" Name="EPI_Episodes" UserDataComponentName="EPI_EpisodesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="dbSeriesConnectionString (Settings)" DbObjectName="dbSeries.dbo.EPI_Episodes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[EPI_Episodes] WHERE (([EPI_ID] = @Original_EPI_ID) AND ([EPI_Created] = @Original_EPI_Created) AND ((@IsNull_EPI_Changed = 1 AND [EPI_Changed] IS NULL) OR ([EPI_Changed] = @Original_EPI_Changed)) AND ((@IsNull_EPI_Deleted = 1 AND [EPI_Deleted] IS NULL) OR ([EPI_Deleted] = @Original_EPI_Deleted)) AND ((@IsNull_EPI_theTVDB_ID = 1 AND [EPI_theTVDB_ID] IS NULL) OR ([EPI_theTVDB_ID] = @Original_EPI_theTVDB_ID)) AND ((@IsNull_EPI_imdb_ID = 1 AND [EPI_imdb_ID] IS NULL) OR ([EPI_imdb_ID] = @Original_EPI_imdb_ID)) AND ((@IsNull_EPI_SEA = 1 AND [EPI_SEA] IS NULL) OR ([EPI_SEA] = @Original_EPI_SEA)) AND ((@IsNull_EPI_Name_German = 1 AND [EPI_Name_German] IS NULL) OR ([EPI_Name_German] = @Original_EPI_Name_German)) AND ((@IsNull_EPI_Name_English = 1 AND [EPI_Name_English] IS NULL) OR ([EPI_Name_English] = @Original_EPI_Name_English)) AND ((@IsNull_EPI_FirstAired_German = 1 AND [EPI_FirstAired_German] IS NULL) OR ([EPI_FirstAired_German] = @Original_EPI_FirstAired_German)) AND ((@IsNull_EPI_FirstAired_English = 1 AND [EPI_FirstAired_English] IS NULL) OR ([EPI_FirstAired_English] = @Original_EPI_FirstAired_English)) AND ((@IsNull_EPI_Rate = 1 AND [EPI_Rate] IS NULL) OR ([EPI_Rate] = @Original_EPI_Rate)) AND ((@IsNull_EPI_RateCount = 1 AND [EPI_RateCount] IS NULL) OR ([EPI_RateCount] = @Original_EPI_RateCount)) AND ((@IsNull_EPI_imdb_Rate = 1 AND [EPI_imdb_Rate] IS NULL) OR ([EPI_imdb_Rate] = @Original_EPI_imdb_Rate)) AND ((@IsNull_EPI_imdb_RateCount = 1 AND [EPI_imdb_RateCount] IS NULL) OR ([EPI_imdb_RateCount] = @Original_EPI_imdb_RateCount)) AND ((@IsNull_EPI_WatchedCount = 1 AND [EPI_WatchedCount] IS NULL) OR ([EPI_WatchedCount] = @Original_EPI_WatchedCount)) AND ((@IsNull_EPI_Number = 1 AND [EPI_Number] IS NULL) OR ([EPI_Number] = @Original_EPI_Number)) AND ((@IsNull_EPI_NumberOfSeason = 1 AND [EPI_NumberOfSeason] IS NULL) OR ([EPI_NumberOfSeason] = @Original_EPI_NumberOfSeason)) AND ((@IsNull_EPI_NumberText = 1 AND [EPI_NumberText] IS NULL) OR ([EPI_NumberText] = @Original_EPI_NumberText)) AND ((@IsNull_EPI_Languages = 1 AND [EPI_Languages] IS NULL) OR ([EPI_Languages] = @Original_EPI_Languages)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EPI_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EPI_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Changed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Changed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Changed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Deleted" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Deleted" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Deleted" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_theTVDB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_theTVDB_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_imdb_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_SEA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_SEA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_SEA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_SEA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Name_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Name_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Name_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Name_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_FirstAired_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_FirstAired_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_FirstAired_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_FirstAired_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_EPI_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_imdb_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_EPI_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_WatchedCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_WatchedCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_WatchedCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_WatchedCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_NumberOfSeason" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberOfSeason" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_NumberOfSeason" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberOfSeason" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_NumberText" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberText" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_NumberText" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Languages" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Languages" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Languages" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[EPI_Episodes] ([EPI_ID], [EPI_Created], [EPI_Changed], [EPI_Deleted], [EPI_theTVDB_ID], [EPI_imdb_ID], [EPI_SEA], [EPI_Name_German], [EPI_Name_English], [EPI_DescriptionShort_German], [EPI_DescriptionShort_English], [EPI_Description_German], [EPI_Description_English], [EPI_FirstAired_German], [EPI_FirstAired_English], [EPI_Rate], [EPI_RateCount], [EPI_imdb_Rate], [EPI_imdb_RateCount], [EPI_WatchedCount], [EPI_Number], [EPI_NumberOfSeason], [EPI_NumberText], [EPI_Languages]) VALUES (@EPI_ID, @EPI_Created, @EPI_Changed, @EPI_Deleted, @EPI_theTVDB_ID, @EPI_imdb_ID, @EPI_SEA, @EPI_Name_German, @EPI_Name_English, @EPI_DescriptionShort_German, @EPI_DescriptionShort_English, @EPI_Description_German, @EPI_Description_English, @EPI_FirstAired_German, @EPI_FirstAired_English, @EPI_Rate, @EPI_RateCount, @EPI_imdb_Rate, @EPI_imdb_RateCount, @EPI_WatchedCount, @EPI_Number, @EPI_NumberOfSeason, @EPI_NumberText, @EPI_Languages);
+SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_ID, EPI_SEA, EPI_Name_German, EPI_Name_English, EPI_DescriptionShort_German, EPI_DescriptionShort_English, EPI_Description_German, EPI_Description_English, EPI_FirstAired_German, EPI_FirstAired_English, EPI_Rate, EPI_RateCount, EPI_imdb_Rate, EPI_imdb_RateCount, EPI_WatchedCount, EPI_Number, EPI_NumberOfSeason, EPI_NumberText, EPI_Languages FROM EPI_Episodes WHERE (EPI_ID = @EPI_ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EPI_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EPI_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Changed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Deleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_SEA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_SEA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_DescriptionShort_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_DescriptionShort_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_DescriptionShort_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_DescriptionShort_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Description_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Description_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Description_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Description_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EPI_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EPI_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_WatchedCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_WatchedCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_NumberOfSeason" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberOfSeason" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_NumberText" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Languages" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_ID, EPI_SEA, EPI_Name_German, EPI_Name_English, EPI_DescriptionShort_German, EPI_DescriptionShort_English, EPI_Description_German, EPI_Description_English, EPI_FirstAired_German, EPI_FirstAired_English, EPI_Rate, EPI_RateCount, EPI_imdb_Rate, EPI_imdb_RateCount, EPI_WatchedCount, EPI_Number, EPI_NumberOfSeason, EPI_NumberText, EPI_Languages FROM dbo.EPI_Episodes</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[EPI_Episodes] SET [EPI_ID] = @EPI_ID, [EPI_Created] = @EPI_Created, [EPI_Changed] = @EPI_Changed, [EPI_Deleted] = @EPI_Deleted, [EPI_theTVDB_ID] = @EPI_theTVDB_ID, [EPI_imdb_ID] = @EPI_imdb_ID, [EPI_SEA] = @EPI_SEA, [EPI_Name_German] = @EPI_Name_German, [EPI_Name_English] = @EPI_Name_English, [EPI_DescriptionShort_German] = @EPI_DescriptionShort_German, [EPI_DescriptionShort_English] = @EPI_DescriptionShort_English, [EPI_Description_German] = @EPI_Description_German, [EPI_Description_English] = @EPI_Description_English, [EPI_FirstAired_German] = @EPI_FirstAired_German, [EPI_FirstAired_English] = @EPI_FirstAired_English, [EPI_Rate] = @EPI_Rate, [EPI_RateCount] = @EPI_RateCount, [EPI_imdb_Rate] = @EPI_imdb_Rate, [EPI_imdb_RateCount] = @EPI_imdb_RateCount, [EPI_WatchedCount] = @EPI_WatchedCount, [EPI_Number] = @EPI_Number, [EPI_NumberOfSeason] = @EPI_NumberOfSeason, [EPI_NumberText] = @EPI_NumberText, [EPI_Languages] = @EPI_Languages WHERE (([EPI_ID] = @Original_EPI_ID) AND ([EPI_Created] = @Original_EPI_Created) AND ((@IsNull_EPI_Changed = 1 AND [EPI_Changed] IS NULL) OR ([EPI_Changed] = @Original_EPI_Changed)) AND ((@IsNull_EPI_Deleted = 1 AND [EPI_Deleted] IS NULL) OR ([EPI_Deleted] = @Original_EPI_Deleted)) AND ((@IsNull_EPI_theTVDB_ID = 1 AND [EPI_theTVDB_ID] IS NULL) OR ([EPI_theTVDB_ID] = @Original_EPI_theTVDB_ID)) AND ((@IsNull_EPI_imdb_ID = 1 AND [EPI_imdb_ID] IS NULL) OR ([EPI_imdb_ID] = @Original_EPI_imdb_ID)) AND ((@IsNull_EPI_SEA = 1 AND [EPI_SEA] IS NULL) OR ([EPI_SEA] = @Original_EPI_SEA)) AND ((@IsNull_EPI_Name_German = 1 AND [EPI_Name_German] IS NULL) OR ([EPI_Name_German] = @Original_EPI_Name_German)) AND ((@IsNull_EPI_Name_English = 1 AND [EPI_Name_English] IS NULL) OR ([EPI_Name_English] = @Original_EPI_Name_English)) AND ((@IsNull_EPI_FirstAired_German = 1 AND [EPI_FirstAired_German] IS NULL) OR ([EPI_FirstAired_German] = @Original_EPI_FirstAired_German)) AND ((@IsNull_EPI_FirstAired_English = 1 AND [EPI_FirstAired_English] IS NULL) OR ([EPI_FirstAired_English] = @Original_EPI_FirstAired_English)) AND ((@IsNull_EPI_Rate = 1 AND [EPI_Rate] IS NULL) OR ([EPI_Rate] = @Original_EPI_Rate)) AND ((@IsNull_EPI_RateCount = 1 AND [EPI_RateCount] IS NULL) OR ([EPI_RateCount] = @Original_EPI_RateCount)) AND ((@IsNull_EPI_imdb_Rate = 1 AND [EPI_imdb_Rate] IS NULL) OR ([EPI_imdb_Rate] = @Original_EPI_imdb_Rate)) AND ((@IsNull_EPI_imdb_RateCount = 1 AND [EPI_imdb_RateCount] IS NULL) OR ([EPI_imdb_RateCount] = @Original_EPI_imdb_RateCount)) AND ((@IsNull_EPI_WatchedCount = 1 AND [EPI_WatchedCount] IS NULL) OR ([EPI_WatchedCount] = @Original_EPI_WatchedCount)) AND ((@IsNull_EPI_Number = 1 AND [EPI_Number] IS NULL) OR ([EPI_Number] = @Original_EPI_Number)) AND ((@IsNull_EPI_NumberOfSeason = 1 AND [EPI_NumberOfSeason] IS NULL) OR ([EPI_NumberOfSeason] = @Original_EPI_NumberOfSeason)) AND ((@IsNull_EPI_NumberText = 1 AND [EPI_NumberText] IS NULL) OR ([EPI_NumberText] = @Original_EPI_NumberText)) AND ((@IsNull_EPI_Languages = 1 AND [EPI_Languages] IS NULL) OR ([EPI_Languages] = @Original_EPI_Languages)));
+SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_ID, EPI_SEA, EPI_Name_German, EPI_Name_English, EPI_DescriptionShort_German, EPI_DescriptionShort_English, EPI_Description_German, EPI_Description_English, EPI_FirstAired_German, EPI_FirstAired_English, EPI_Rate, EPI_RateCount, EPI_imdb_Rate, EPI_imdb_RateCount, EPI_WatchedCount, EPI_Number, EPI_NumberOfSeason, EPI_NumberText, EPI_Languages FROM EPI_Episodes WHERE (EPI_ID = @EPI_ID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@EPI_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EPI_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Created" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Changed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Deleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_SEA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_SEA" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_DescriptionShort_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_DescriptionShort_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_DescriptionShort_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_DescriptionShort_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Description_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Description_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Description_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Description_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@EPI_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EPI_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@EPI_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_WatchedCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_WatchedCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Number" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@EPI_NumberOfSeason" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberOfSeason" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_NumberText" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@EPI_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Languages" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_EPI_ID" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="EPI_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_Created" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Created" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Changed" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Changed" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_Changed" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Changed" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Deleted" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Deleted" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_Deleted" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_Deleted" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_theTVDB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_theTVDB_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_theTVDB_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_theTVDB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_imdb_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_ID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_imdb_ID" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_imdb_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_SEA" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_SEA" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_SEA" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_SEA" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Name_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Name_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_Name_German" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Name_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Name_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_Name_English" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Name_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_FirstAired_German" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_FirstAired_German" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_FirstAired_German" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_German" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_FirstAired_English" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_FirstAired_English" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_EPI_FirstAired_English" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="EPI_FirstAired_English" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_EPI_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_imdb_Rate" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_Rate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Double" Direction="Input" ParameterName="@Original_EPI_imdb_Rate" Precision="0" ProviderType="Float" Scale="0" Size="0" SourceColumn="EPI_imdb_Rate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_RateCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_imdb_RateCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_imdb_RateCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_WatchedCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_WatchedCount" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_WatchedCount" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_WatchedCount" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Number" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_Number" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Number" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_NumberOfSeason" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberOfSeason" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_EPI_NumberOfSeason" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberOfSeason" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_NumberText" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_NumberText" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_NumberText" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_NumberText" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_EPI_Languages" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="EPI_Languages" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_EPI_Languages" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="EPI_Languages" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EPI_ID" DataSetColumn="EPI_ID" />
+              <Mapping SourceColumn="EPI_Created" DataSetColumn="EPI_Created" />
+              <Mapping SourceColumn="EPI_Changed" DataSetColumn="EPI_Changed" />
+              <Mapping SourceColumn="EPI_Deleted" DataSetColumn="EPI_Deleted" />
+              <Mapping SourceColumn="EPI_theTVDB_ID" DataSetColumn="EPI_theTVDB_ID" />
+              <Mapping SourceColumn="EPI_imdb_ID" DataSetColumn="EPI_imdb_ID" />
+              <Mapping SourceColumn="EPI_SEA" DataSetColumn="EPI_SEA" />
+              <Mapping SourceColumn="EPI_Name_German" DataSetColumn="EPI_Name_German" />
+              <Mapping SourceColumn="EPI_Name_English" DataSetColumn="EPI_Name_English" />
+              <Mapping SourceColumn="EPI_DescriptionShort_German" DataSetColumn="EPI_DescriptionShort_German" />
+              <Mapping SourceColumn="EPI_DescriptionShort_English" DataSetColumn="EPI_DescriptionShort_English" />
+              <Mapping SourceColumn="EPI_Description_German" DataSetColumn="EPI_Description_German" />
+              <Mapping SourceColumn="EPI_Description_English" DataSetColumn="EPI_Description_English" />
+              <Mapping SourceColumn="EPI_FirstAired_German" DataSetColumn="EPI_FirstAired_German" />
+              <Mapping SourceColumn="EPI_FirstAired_English" DataSetColumn="EPI_FirstAired_English" />
+              <Mapping SourceColumn="EPI_Rate" DataSetColumn="EPI_Rate" />
+              <Mapping SourceColumn="EPI_RateCount" DataSetColumn="EPI_RateCount" />
+              <Mapping SourceColumn="EPI_imdb_Rate" DataSetColumn="EPI_imdb_Rate" />
+              <Mapping SourceColumn="EPI_imdb_RateCount" DataSetColumn="EPI_imdb_RateCount" />
+              <Mapping SourceColumn="EPI_WatchedCount" DataSetColumn="EPI_WatchedCount" />
+              <Mapping SourceColumn="EPI_Number" DataSetColumn="EPI_Number" />
+              <Mapping SourceColumn="EPI_NumberOfSeason" DataSetColumn="EPI_NumberOfSeason" />
+              <Mapping SourceColumn="EPI_NumberText" DataSetColumn="EPI_NumberText" />
+              <Mapping SourceColumn="EPI_Languages" DataSetColumn="EPI_Languages" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsSeries" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsSeries" msprop:Generator_UserDSName="dsSeries">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="SER_Series" msprop:Generator_TableClassName="SER_SeriesDataTable" msprop:Generator_TableVarName="tableSER_Series" msprop:Generator_TablePropName="SER_Series" msprop:Generator_RowDeletingName="SER_SeriesRowDeleting" msprop:Generator_RowChangingName="SER_SeriesRowChanging" msprop:Generator_RowEvHandlerName="SER_SeriesRowChangeEventHandler" msprop:Generator_RowDeletedName="SER_SeriesRowDeleted" msprop:Generator_UserTableName="SER_Series" msprop:Generator_RowChangedName="SER_SeriesRowChanged" msprop:Generator_RowEvArgName="SER_SeriesRowChangeEvent" msprop:Generator_RowClassName="SER_SeriesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SER_ID" msprop:Generator_ColumnVarNameInTable="columnSER_ID" msprop:Generator_ColumnPropNameInRow="SER_ID" msprop:Generator_ColumnPropNameInTable="SER_IDColumn" msprop:Generator_UserColumnName="SER_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Created" msprop:Generator_ColumnVarNameInTable="columnSER_Created" msprop:Generator_ColumnPropNameInRow="SER_Created" msprop:Generator_ColumnPropNameInTable="SER_CreatedColumn" msprop:Generator_UserColumnName="SER_Created" type="xs:dateTime" />
+              <xs:element name="SER_Changed" msprop:Generator_ColumnVarNameInTable="columnSER_Changed" msprop:Generator_ColumnPropNameInRow="SER_Changed" msprop:Generator_ColumnPropNameInTable="SER_ChangedColumn" msprop:Generator_UserColumnName="SER_Changed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SER_Deleted" msprop:Generator_ColumnVarNameInTable="columnSER_Deleted" msprop:Generator_ColumnPropNameInRow="SER_Deleted" msprop:Generator_ColumnPropNameInTable="SER_DeletedColumn" msprop:Generator_UserColumnName="SER_Deleted" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SER_theTVDB_ID" msprop:Generator_ColumnVarNameInTable="columnSER_theTVDB_ID" msprop:Generator_ColumnPropNameInRow="SER_theTVDB_ID" msprop:Generator_ColumnPropNameInTable="SER_theTVDB_IDColumn" msprop:Generator_UserColumnName="SER_theTVDB_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Zap2It_ID" msprop:Generator_ColumnVarNameInTable="columnSER_Zap2It_ID" msprop:Generator_ColumnPropNameInRow="SER_Zap2It_ID" msprop:Generator_ColumnPropNameInTable="SER_Zap2It_IDColumn" msprop:Generator_UserColumnName="SER_Zap2It_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_imdb_ID" msprop:Generator_ColumnVarNameInTable="columnSER_imdb_ID" msprop:Generator_ColumnPropNameInRow="SER_imdb_ID" msprop:Generator_ColumnPropNameInTable="SER_imdb_IDColumn" msprop:Generator_UserColumnName="SER_imdb_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Name_German" msprop:Generator_ColumnVarNameInTable="columnSER_Name_German" msprop:Generator_ColumnPropNameInRow="SER_Name_German" msprop:Generator_ColumnPropNameInTable="SER_Name_GermanColumn" msprop:Generator_UserColumnName="SER_Name_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Name_English" msprop:Generator_ColumnVarNameInTable="columnSER_Name_English" msprop:Generator_ColumnPropNameInRow="SER_Name_English" msprop:Generator_ColumnPropNameInTable="SER_Name_EnglishColumn" msprop:Generator_UserColumnName="SER_Name_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_DescriptionShort_German" msprop:Generator_ColumnVarNameInTable="columnSER_DescriptionShort_German" msprop:Generator_ColumnPropNameInRow="SER_DescriptionShort_German" msprop:Generator_ColumnPropNameInTable="SER_DescriptionShort_GermanColumn" msprop:Generator_UserColumnName="SER_DescriptionShort_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_DescriptionShort_English" msprop:Generator_ColumnVarNameInTable="columnSER_DescriptionShort_English" msprop:Generator_ColumnPropNameInRow="SER_DescriptionShort_English" msprop:Generator_ColumnPropNameInTable="SER_DescriptionShort_EnglishColumn" msprop:Generator_UserColumnName="SER_DescriptionShort_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Description_German" msprop:Generator_ColumnVarNameInTable="columnSER_Description_German" msprop:Generator_ColumnPropNameInRow="SER_Description_German" msprop:Generator_ColumnPropNameInTable="SER_Description_GermanColumn" msprop:Generator_UserColumnName="SER_Description_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Description_English" msprop:Generator_ColumnVarNameInTable="columnSER_Description_English" msprop:Generator_ColumnPropNameInRow="SER_Description_English" msprop:Generator_ColumnPropNameInTable="SER_Description_EnglishColumn" msprop:Generator_UserColumnName="SER_Description_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_FirstAired_German" msprop:Generator_ColumnVarNameInTable="columnSER_FirstAired_German" msprop:Generator_ColumnPropNameInRow="SER_FirstAired_German" msprop:Generator_ColumnPropNameInTable="SER_FirstAired_GermanColumn" msprop:Generator_UserColumnName="SER_FirstAired_German" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SER_FirstAired_English" msprop:Generator_ColumnVarNameInTable="columnSER_FirstAired_English" msprop:Generator_ColumnPropNameInRow="SER_FirstAired_English" msprop:Generator_ColumnPropNameInTable="SER_FirstAired_EnglishColumn" msprop:Generator_UserColumnName="SER_FirstAired_English" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SER_Rate" msprop:Generator_ColumnVarNameInTable="columnSER_Rate" msprop:Generator_ColumnPropNameInRow="SER_Rate" msprop:Generator_ColumnPropNameInTable="SER_RateColumn" msprop:Generator_UserColumnName="SER_Rate" type="xs:double" minOccurs="0" />
+              <xs:element name="SER_RateCount" msprop:Generator_ColumnVarNameInTable="columnSER_RateCount" msprop:Generator_ColumnPropNameInRow="SER_RateCount" msprop:Generator_ColumnPropNameInTable="SER_RateCountColumn" msprop:Generator_UserColumnName="SER_RateCount" type="xs:int" minOccurs="0" />
+              <xs:element name="SER_imdb_Rate" msprop:Generator_ColumnVarNameInTable="columnSER_imdb_Rate" msprop:Generator_ColumnPropNameInRow="SER_imdb_Rate" msprop:Generator_ColumnPropNameInTable="SER_imdb_RateColumn" msprop:Generator_UserColumnName="SER_imdb_Rate" type="xs:double" minOccurs="0" />
+              <xs:element name="SER_imdb_RateCount" msprop:Generator_ColumnVarNameInTable="columnSER_imdb_RateCount" msprop:Generator_ColumnPropNameInRow="SER_imdb_RateCount" msprop:Generator_ColumnPropNameInTable="SER_imdb_RateCountColumn" msprop:Generator_UserColumnName="SER_imdb_RateCount" type="xs:int" minOccurs="0" />
+              <xs:element name="SER_RunTime" msprop:Generator_ColumnVarNameInTable="columnSER_RunTime" msprop:Generator_ColumnPropNameInRow="SER_RunTime" msprop:Generator_ColumnPropNameInTable="SER_RunTimeColumn" msprop:Generator_UserColumnName="SER_RunTime" type="xs:int" minOccurs="0" />
+              <xs:element name="SER_State" msprop:Generator_ColumnVarNameInTable="columnSER_State" msprop:Generator_ColumnPropNameInRow="SER_State" msprop:Generator_ColumnPropNameInTable="SER_StateColumn" msprop:Generator_UserColumnName="SER_State" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Soundtrack" msprop:Generator_ColumnVarNameInTable="columnSER_Soundtrack" msprop:Generator_ColumnPropNameInRow="SER_Soundtrack" msprop:Generator_ColumnPropNameInTable="SER_SoundtrackColumn" msprop:Generator_UserColumnName="SER_Soundtrack" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Trailer" msprop:Generator_ColumnVarNameInTable="columnSER_Trailer" msprop:Generator_ColumnPropNameInRow="SER_Trailer" msprop:Generator_ColumnPropNameInTable="SER_TrailerColumn" msprop:Generator_UserColumnName="SER_Trailer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_ProductionDateFrom" msprop:Generator_ColumnVarNameInTable="columnSER_ProductionDateFrom" msprop:Generator_ColumnPropNameInRow="SER_ProductionDateFrom" msprop:Generator_ColumnPropNameInTable="SER_ProductionDateFromColumn" msprop:Generator_UserColumnName="SER_ProductionDateFrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SER_ProductionDateTo" msprop:Generator_ColumnVarNameInTable="columnSER_ProductionDateTo" msprop:Generator_ColumnPropNameInRow="SER_ProductionDateTo" msprop:Generator_ColumnPropNameInTable="SER_ProductionDateToColumn" msprop:Generator_UserColumnName="SER_ProductionDateTo" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SER_Country" msprop:Generator_ColumnVarNameInTable="columnSER_Country" msprop:Generator_ColumnPropNameInRow="SER_Country" msprop:Generator_ColumnPropNameInTable="SER_CountryColumn" msprop:Generator_UserColumnName="SER_Country" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Languages" msprop:Generator_ColumnVarNameInTable="columnSER_Languages" msprop:Generator_ColumnPropNameInRow="SER_Languages" msprop:Generator_ColumnPropNameInTable="SER_LanguagesColumn" msprop:Generator_UserColumnName="SER_Languages" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Awards" msprop:Generator_ColumnVarNameInTable="columnSER_Awards" msprop:Generator_ColumnPropNameInRow="SER_Awards" msprop:Generator_ColumnPropNameInTable="SER_AwardsColumn" msprop:Generator_UserColumnName="SER_Awards" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Website" msprop:Generator_ColumnVarNameInTable="columnSER_Website" msprop:Generator_ColumnPropNameInRow="SER_Website" msprop:Generator_ColumnPropNameInTable="SER_WebsiteColumn" msprop:Generator_UserColumnName="SER_Website" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Facebook" msprop:Generator_ColumnVarNameInTable="columnSER_Facebook" msprop:Generator_ColumnPropNameInRow="SER_Facebook" msprop:Generator_ColumnPropNameInTable="SER_FacebookColumn" msprop:Generator_UserColumnName="SER_Facebook" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_Twitter" msprop:Generator_ColumnVarNameInTable="columnSER_Twitter" msprop:Generator_ColumnPropNameInRow="SER_Twitter" msprop:Generator_ColumnPropNameInTable="SER_TwitterColumn" msprop:Generator_UserColumnName="SER_Twitter" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_ImageLink" msprop:Generator_ColumnVarNameInTable="columnSER_ImageLink" msprop:Generator_ColumnPropNameInRow="SER_ImageLink" msprop:Generator_ColumnPropNameInTable="SER_ImageLinkColumn" msprop:Generator_UserColumnName="SER_ImageLink" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SER_SeasonCount" msprop:Generator_ColumnVarNameInTable="columnSER_SeasonCount" msprop:Generator_ColumnPropNameInRow="SER_SeasonCount" msprop:Generator_ColumnPropNameInTable="SER_SeasonCountColumn" msprop:Generator_UserColumnName="SER_SeasonCount" type="xs:int" minOccurs="0" />
+              <xs:element name="SER_EpisodesCount" msprop:Generator_ColumnVarNameInTable="columnSER_EpisodesCount" msprop:Generator_ColumnPropNameInRow="SER_EpisodesCount" msprop:Generator_ColumnPropNameInTable="SER_EpisodesCountColumn" msprop:Generator_UserColumnName="SER_EpisodesCount" type="xs:int" minOccurs="0" />
+              <xs:element name="SER_FavouritesCount" msprop:Generator_ColumnVarNameInTable="columnSER_FavouritesCount" msprop:Generator_ColumnPropNameInRow="SER_FavouritesCount" msprop:Generator_ColumnPropNameInTable="SER_FavouritesCountColumn" msprop:Generator_UserColumnName="SER_FavouritesCount" type="xs:int" minOccurs="0" />
+              <xs:element name="SER_DIR" msprop:Generator_ColumnVarNameInTable="columnSER_DIR" msprop:Generator_ColumnPropNameInRow="SER_DIR" msprop:Generator_ColumnPropNameInTable="SER_DIRColumn" msprop:Generator_UserColumnName="SER_DIR" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SEA_Seasons" msprop:Generator_TableClassName="SEA_SeasonsDataTable" msprop:Generator_TableVarName="tableSEA_Seasons" msprop:Generator_TablePropName="SEA_Seasons" msprop:Generator_RowDeletingName="SEA_SeasonsRowDeleting" msprop:Generator_RowChangingName="SEA_SeasonsRowChanging" msprop:Generator_RowEvHandlerName="SEA_SeasonsRowChangeEventHandler" msprop:Generator_RowDeletedName="SEA_SeasonsRowDeleted" msprop:Generator_UserTableName="SEA_Seasons" msprop:Generator_RowChangedName="SEA_SeasonsRowChanged" msprop:Generator_RowEvArgName="SEA_SeasonsRowChangeEvent" msprop:Generator_RowClassName="SEA_SeasonsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SEA_ID" msprop:Generator_ColumnVarNameInTable="columnSEA_ID" msprop:Generator_ColumnPropNameInRow="SEA_ID" msprop:Generator_ColumnPropNameInTable="SEA_IDColumn" msprop:Generator_UserColumnName="SEA_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_Created" msprop:Generator_ColumnVarNameInTable="columnSEA_Created" msprop:Generator_ColumnPropNameInRow="SEA_Created" msprop:Generator_ColumnPropNameInTable="SEA_CreatedColumn" msprop:Generator_UserColumnName="SEA_Created" type="xs:dateTime" />
+              <xs:element name="SEA_Changed" msprop:Generator_ColumnVarNameInTable="columnSEA_Changed" msprop:Generator_ColumnPropNameInRow="SEA_Changed" msprop:Generator_ColumnPropNameInTable="SEA_ChangedColumn" msprop:Generator_UserColumnName="SEA_Changed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SEA_Deleted" msprop:Generator_ColumnVarNameInTable="columnSEA_Deleted" msprop:Generator_ColumnPropNameInRow="SEA_Deleted" msprop:Generator_ColumnPropNameInTable="SEA_DeletedColumn" msprop:Generator_UserColumnName="SEA_Deleted" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="SEA_theTVDB_ID" msprop:Generator_ColumnVarNameInTable="columnSEA_theTVDB_ID" msprop:Generator_ColumnPropNameInRow="SEA_theTVDB_ID" msprop:Generator_ColumnPropNameInTable="SEA_theTVDB_IDColumn" msprop:Generator_UserColumnName="SEA_theTVDB_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_imdb_ID" msprop:Generator_ColumnVarNameInTable="columnSEA_imdb_ID" msprop:Generator_ColumnPropNameInRow="SEA_imdb_ID" msprop:Generator_ColumnPropNameInTable="SEA_imdb_IDColumn" msprop:Generator_UserColumnName="SEA_imdb_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_SER" msprop:Generator_ColumnVarNameInTable="columnSEA_SER" msprop:Generator_ColumnPropNameInRow="SEA_SER" msprop:Generator_ColumnPropNameInTable="SEA_SERColumn" msprop:Generator_UserColumnName="SEA_SER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_Name_German" msprop:Generator_ColumnVarNameInTable="columnSEA_Name_German" msprop:Generator_ColumnPropNameInRow="SEA_Name_German" msprop:Generator_ColumnPropNameInTable="SEA_Name_GermanColumn" msprop:Generator_UserColumnName="SEA_Name_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_Name_English" msprop:Generator_ColumnVarNameInTable="columnSEA_Name_English" msprop:Generator_ColumnPropNameInRow="SEA_Name_English" msprop:Generator_ColumnPropNameInTable="SEA_Name_EnglishColumn" msprop:Generator_UserColumnName="SEA_Name_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_Number" msprop:Generator_ColumnVarNameInTable="columnSEA_Number" msprop:Generator_ColumnPropNameInRow="SEA_Number" msprop:Generator_ColumnPropNameInTable="SEA_NumberColumn" msprop:Generator_UserColumnName="SEA_Number" type="xs:int" minOccurs="0" />
+              <xs:element name="SEA_OrderNumber" msprop:Generator_ColumnVarNameInTable="columnSEA_OrderNumber" msprop:Generator_ColumnPropNameInRow="SEA_OrderNumber" msprop:Generator_ColumnPropNameInTable="SEA_OrderNumberColumn" msprop:Generator_UserColumnName="SEA_OrderNumber" type="xs:int" minOccurs="0" />
+              <xs:element name="SEA_EpisodesCount" msprop:Generator_ColumnVarNameInTable="columnSEA_EpisodesCount" msprop:Generator_ColumnPropNameInRow="SEA_EpisodesCount" msprop:Generator_ColumnPropNameInTable="SEA_EpisodesCountColumn" msprop:Generator_UserColumnName="SEA_EpisodesCount" type="xs:int" minOccurs="0" />
+              <xs:element name="SEA_Description_German" msprop:Generator_ColumnVarNameInTable="columnSEA_Description_German" msprop:Generator_ColumnPropNameInRow="SEA_Description_German" msprop:Generator_ColumnPropNameInTable="SEA_Description_GermanColumn" msprop:Generator_UserColumnName="SEA_Description_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_Description_English" msprop:Generator_ColumnVarNameInTable="columnSEA_Description_English" msprop:Generator_ColumnPropNameInRow="SEA_Description_English" msprop:Generator_ColumnPropNameInTable="SEA_Description_EnglishColumn" msprop:Generator_UserColumnName="SEA_Description_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEA_NumberText" msprop:Generator_ColumnVarNameInTable="columnSEA_NumberText" msprop:Generator_ColumnPropNameInRow="SEA_NumberText" msprop:Generator_ColumnPropNameInTable="SEA_NumberTextColumn" msprop:Generator_UserColumnName="SEA_NumberText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EPI_Episodes" msprop:Generator_TableClassName="EPI_EpisodesDataTable" msprop:Generator_TableVarName="tableEPI_Episodes" msprop:Generator_TablePropName="EPI_Episodes" msprop:Generator_RowDeletingName="EPI_EpisodesRowDeleting" msprop:Generator_RowChangingName="EPI_EpisodesRowChanging" msprop:Generator_RowEvHandlerName="EPI_EpisodesRowChangeEventHandler" msprop:Generator_RowDeletedName="EPI_EpisodesRowDeleted" msprop:Generator_UserTableName="EPI_Episodes" msprop:Generator_RowChangedName="EPI_EpisodesRowChanged" msprop:Generator_RowEvArgName="EPI_EpisodesRowChangeEvent" msprop:Generator_RowClassName="EPI_EpisodesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EPI_ID" msprop:Generator_ColumnVarNameInTable="columnEPI_ID" msprop:Generator_ColumnPropNameInRow="EPI_ID" msprop:Generator_ColumnPropNameInTable="EPI_IDColumn" msprop:Generator_UserColumnName="EPI_ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_Created" msprop:Generator_ColumnVarNameInTable="columnEPI_Created" msprop:Generator_ColumnPropNameInRow="EPI_Created" msprop:Generator_ColumnPropNameInTable="EPI_CreatedColumn" msprop:Generator_UserColumnName="EPI_Created" type="xs:dateTime" />
+              <xs:element name="EPI_Changed" msprop:Generator_ColumnVarNameInTable="columnEPI_Changed" msprop:Generator_ColumnPropNameInRow="EPI_Changed" msprop:Generator_ColumnPropNameInTable="EPI_ChangedColumn" msprop:Generator_UserColumnName="EPI_Changed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EPI_Deleted" msprop:Generator_ColumnVarNameInTable="columnEPI_Deleted" msprop:Generator_ColumnPropNameInRow="EPI_Deleted" msprop:Generator_ColumnPropNameInTable="EPI_DeletedColumn" msprop:Generator_UserColumnName="EPI_Deleted" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EPI_theTVDB_ID" msprop:Generator_ColumnVarNameInTable="columnEPI_theTVDB_ID" msprop:Generator_ColumnPropNameInRow="EPI_theTVDB_ID" msprop:Generator_ColumnPropNameInTable="EPI_theTVDB_IDColumn" msprop:Generator_UserColumnName="EPI_theTVDB_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_imdb_ID" msprop:Generator_ColumnVarNameInTable="columnEPI_imdb_ID" msprop:Generator_ColumnPropNameInRow="EPI_imdb_ID" msprop:Generator_ColumnPropNameInTable="EPI_imdb_IDColumn" msprop:Generator_UserColumnName="EPI_imdb_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_SEA" msprop:Generator_ColumnVarNameInTable="columnEPI_SEA" msprop:Generator_ColumnPropNameInRow="EPI_SEA" msprop:Generator_ColumnPropNameInTable="EPI_SEAColumn" msprop:Generator_UserColumnName="EPI_SEA" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_Name_German" msprop:Generator_ColumnVarNameInTable="columnEPI_Name_German" msprop:Generator_ColumnPropNameInRow="EPI_Name_German" msprop:Generator_ColumnPropNameInTable="EPI_Name_GermanColumn" msprop:Generator_UserColumnName="EPI_Name_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_Name_English" msprop:Generator_ColumnVarNameInTable="columnEPI_Name_English" msprop:Generator_ColumnPropNameInRow="EPI_Name_English" msprop:Generator_ColumnPropNameInTable="EPI_Name_EnglishColumn" msprop:Generator_UserColumnName="EPI_Name_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_DescriptionShort_German" msprop:Generator_ColumnVarNameInTable="columnEPI_DescriptionShort_German" msprop:Generator_ColumnPropNameInRow="EPI_DescriptionShort_German" msprop:Generator_ColumnPropNameInTable="EPI_DescriptionShort_GermanColumn" msprop:Generator_UserColumnName="EPI_DescriptionShort_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_DescriptionShort_English" msprop:Generator_ColumnVarNameInTable="columnEPI_DescriptionShort_English" msprop:Generator_ColumnPropNameInRow="EPI_DescriptionShort_English" msprop:Generator_ColumnPropNameInTable="EPI_DescriptionShort_EnglishColumn" msprop:Generator_UserColumnName="EPI_DescriptionShort_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_Description_German" msprop:Generator_ColumnVarNameInTable="columnEPI_Description_German" msprop:Generator_ColumnPropNameInRow="EPI_Description_German" msprop:Generator_ColumnPropNameInTable="EPI_Description_GermanColumn" msprop:Generator_UserColumnName="EPI_Description_German" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_Description_English" msprop:Generator_ColumnVarNameInTable="columnEPI_Description_English" msprop:Generator_ColumnPropNameInRow="EPI_Description_English" msprop:Generator_ColumnPropNameInTable="EPI_Description_EnglishColumn" msprop:Generator_UserColumnName="EPI_Description_English" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_FirstAired_German" msprop:Generator_ColumnVarNameInTable="columnEPI_FirstAired_German" msprop:Generator_ColumnPropNameInRow="EPI_FirstAired_German" msprop:Generator_ColumnPropNameInTable="EPI_FirstAired_GermanColumn" msprop:Generator_UserColumnName="EPI_FirstAired_German" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EPI_FirstAired_English" msprop:Generator_ColumnVarNameInTable="columnEPI_FirstAired_English" msprop:Generator_ColumnPropNameInRow="EPI_FirstAired_English" msprop:Generator_ColumnPropNameInTable="EPI_FirstAired_EnglishColumn" msprop:Generator_UserColumnName="EPI_FirstAired_English" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="EPI_Rate" msprop:Generator_ColumnVarNameInTable="columnEPI_Rate" msprop:Generator_ColumnPropNameInRow="EPI_Rate" msprop:Generator_ColumnPropNameInTable="EPI_RateColumn" msprop:Generator_UserColumnName="EPI_Rate" type="xs:double" minOccurs="0" />
+              <xs:element name="EPI_RateCount" msprop:Generator_ColumnVarNameInTable="columnEPI_RateCount" msprop:Generator_ColumnPropNameInRow="EPI_RateCount" msprop:Generator_ColumnPropNameInTable="EPI_RateCountColumn" msprop:Generator_UserColumnName="EPI_RateCount" type="xs:int" minOccurs="0" />
+              <xs:element name="EPI_imdb_Rate" msprop:Generator_ColumnVarNameInTable="columnEPI_imdb_Rate" msprop:Generator_ColumnPropNameInRow="EPI_imdb_Rate" msprop:Generator_ColumnPropNameInTable="EPI_imdb_RateColumn" msprop:Generator_UserColumnName="EPI_imdb_Rate" type="xs:double" minOccurs="0" />
+              <xs:element name="EPI_imdb_RateCount" msprop:Generator_ColumnVarNameInTable="columnEPI_imdb_RateCount" msprop:Generator_ColumnPropNameInRow="EPI_imdb_RateCount" msprop:Generator_ColumnPropNameInTable="EPI_imdb_RateCountColumn" msprop:Generator_UserColumnName="EPI_imdb_RateCount" type="xs:int" minOccurs="0" />
+              <xs:element name="EPI_WatchedCount" msprop:Generator_ColumnVarNameInTable="columnEPI_WatchedCount" msprop:Generator_ColumnPropNameInRow="EPI_WatchedCount" msprop:Generator_ColumnPropNameInTable="EPI_WatchedCountColumn" msprop:Generator_UserColumnName="EPI_WatchedCount" type="xs:int" minOccurs="0" />
+              <xs:element name="EPI_Number" msprop:Generator_ColumnVarNameInTable="columnEPI_Number" msprop:Generator_ColumnPropNameInRow="EPI_Number" msprop:Generator_ColumnPropNameInTable="EPI_NumberColumn" msprop:Generator_UserColumnName="EPI_Number" type="xs:int" minOccurs="0" />
+              <xs:element name="EPI_NumberOfSeason" msprop:Generator_ColumnVarNameInTable="columnEPI_NumberOfSeason" msprop:Generator_ColumnPropNameInRow="EPI_NumberOfSeason" msprop:Generator_ColumnPropNameInTable="EPI_NumberOfSeasonColumn" msprop:Generator_UserColumnName="EPI_NumberOfSeason" type="xs:int" minOccurs="0" />
+              <xs:element name="EPI_NumberText" msprop:Generator_ColumnVarNameInTable="columnEPI_NumberText" msprop:Generator_ColumnPropNameInRow="EPI_NumberText" msprop:Generator_ColumnPropNameInTable="EPI_NumberTextColumn" msprop:Generator_UserColumnName="EPI_NumberText" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="EPI_Languages" msprop:Generator_ColumnVarNameInTable="columnEPI_Languages" msprop:Generator_ColumnPropNameInRow="EPI_Languages" msprop:Generator_ColumnPropNameInTable="EPI_LanguagesColumn" msprop:Generator_UserColumnName="EPI_Languages" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SER_Series" />
+      <xs:field xpath="mstns:SER_ID" />
+    </xs:unique>
+    <xs:unique name="SEA_Seasons_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SEA_Seasons" />
+      <xs:field xpath="mstns:SEA_ID" />
+    </xs:unique>
+    <xs:unique name="EPI_Episodes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:EPI_Episodes" />
+      <xs:field xpath="mstns:EPI_ID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
