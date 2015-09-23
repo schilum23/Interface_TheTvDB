@@ -35,6 +35,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,6 +52,9 @@
     <Compile Include="csInterface.cs" />
     <Compile Include="csSEA.cs" />
     <Compile Include="csSER.cs" />
+    <Compile Include="dsSeries.cs">
+      <DependentUpon>dsSeries.xsd</DependentUpon>
+    </Compile>
     <Compile Include="dsSeries.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

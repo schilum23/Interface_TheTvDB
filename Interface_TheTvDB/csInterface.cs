@@ -8,7 +8,7 @@ namespace Interface_TheTvDB
 {
     class csInterface
     {
-        string api_Key = "5B0926479125850E";
+    string api_Key = "5B0926479125850E";
         public string API_Key
         {
             get { return api_Key; }
@@ -63,6 +63,6 @@ namespace Interface_TheTvDB
 
 
     }
-
+    
 }
 

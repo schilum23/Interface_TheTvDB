@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Interface_TheTvDB.dsSeriesTableAdapters;
+using System.Data;
 
 namespace Interface_TheTvDB
 {
     class csSER
     {
 
-        database_localDataSet ds = new database_localDataSet();
-        dsAzure dsAzure = new dsAzure();
-        database_localDataSetTableAdapters.SER_SeriesTableAdapter SER = new database_localDataSetTableAdapters.SER_SeriesTableAdapter();
-        dsAzureTableAdapters.SER_SeriesTableAdapter SERAzure = new dsAzureTableAdapters.SER_SeriesTableAdapter();
-
-
+        dsSeries ds = new dsSeries();
+        dsSeriesTableAdapters.SER_SeriesTableAdapter dtSER = new dsSeriesTableAdapters.SER_SeriesTableAdapter();
 
         string ser_ID = "";
         public string SER_ID
@@ -23,25 +21,25 @@ namespace Interface_TheTvDB
             set { ser_ID = value; }
         }
 
-        DateTime ser_createdAt = DateTime.Now;
-        public DateTime SER_createdAt
+        DateTime ser_Created = DateTime.Now;
+        public DateTime SER_Created
         {
-            get { return ser_createdAt; }
-            set { ser_createdAt = value; }
+            get { return ser_Created; }
+            set { ser_Created = value; }
         }
 
-        DateTimeOffset __updatedAt = new DateTimeOffset(DateTime.Now);
-        public DateTimeOffset SER_updatedAt
+        DateTime ser_Changed = DateTime.Now;
+        public DateTime SER_Changed
         {
-            get { return __updatedAt; }
-            set { __updatedAt = value; }
+            get { return ser_Changed; }
+            set { ser_Changed = value; }
         }
 
-        DateTime ser_ChangeDate = DateTime.Now;
-        public DateTime SER_ChangeDate
+        DateTime? ser_Deleted = null;
+        public DateTime? SER_Deleted
         {
-            get { return ser_ChangeDate; }
-            set { ser_ChangeDate = value; }
+            get { return ser_Deleted; }
+            set { ser_Deleted = value; }
         }
 
         string ser_theTVDB_ID = "";
@@ -270,8 +268,7 @@ namespace Interface_TheTvDB
 
         public string insertSerie()
         {
-            //try
-            //{
+
             csSER ser = new csSER();
             ser.ser_theTVDB_ID = ser_theTVDB_ID;
             ser_ID = ser.getSER_IDwithTheTVDB_ID();
@@ -281,7 +278,7 @@ namespace Interface_TheTvDB
 
             ser_ID = Guid.NewGuid().ToString();
 
-            SER.Insert(ser_ID, ser_createdAt, __updatedAt, DateTime.Now, ser_theTVDB_ID, ser_Zap2It_ID, ser_imdb_ID,
+            dtSER.Insert(ser_ID, ser_Created, ser_Changed, null, ser_theTVDB_ID, ser_Zap2It_ID, ser_imdb_ID,
                 ser_Name_German, ser_Name_English, ser_DescriptionShort_German, ser_DescriptionShort_English, ser_Description_German,
                 ser_Description_English, ser_FirstAired_German, ser_FirstAired_English, ser_Rate, ser_RateCount, ser_imdb_Rate, ser_imdb_RateCount,
                 ser_RunTime, ser_State, ser_Soundtrack, ser_Trailer, ser_ProductionDateFrom, ser_ProductionDateTo,
@@ -290,13 +287,6 @@ namespace Interface_TheTvDB
 
 
             return ser_ID;
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    return "";
-            //}
-
         }
 
         public string getSER_IDwithTheTVDB_ID()
@@ -307,15 +297,14 @@ namespace Interface_TheTvDB
             if (string.IsNullOrEmpty(ser_theTVDB_ID))
                 return "";
 
-            returnID = SER.getSER_IDwithTHETVDB_ID(ser_theTVDB_ID);
+            returnID = dtSER.getSER_IDwithTHETVDB_ID(ser_theTVDB_ID);
             return (returnID == null) ? "" : returnID.ToString();
         }
 
         public bool updateSerie()
         {
-            //try
-            //{
-            SER.FillByID(ds.SER_Series, ser_ID);
+
+            dtSER.FillByID(ds.SER_Series, ser_ID);
 
             foreach (DataRow row in ds.SER_Series.Rows)
             {
@@ -323,92 +312,43 @@ namespace Interface_TheTvDB
                 {
                     if (row.Table.Columns.Contains(prop.Name) && !row.Table.Columns[prop.Name].ReadOnly)
                     {
-                        row[prop.Name] = prop.GetValue(this, null);
+                        object value = prop.GetValue(this, null);
+                        if (value != null) { 
+                            row[prop.Name] = value;
+                        }
                     }
                 }
 
-                row["SER_ChangeDate"] = DateTime.Now;
+                row["SER_Changed"] = DateTime.Now;
 
-                SER.Update(row);
+                dtSER.Update(row);
                 return true;
             }
 
             return false;
 
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    return false;
-            //}
-
         }
 
         public csSER getSerie()
         {
-            try
-            {
-                csSER ser = new csSER();
+            csSER ser = new csSER();
 
-                SER.FillByID(ds.SER_Series, ser_ID);
-
-                foreach (DataRow row in ds.SER_Series.Rows)
-                {
-                    foreach (var prop in ser.GetType().GetProperties())
-                    {
-                        if (row.Table.Columns.Contains(prop.Name))
-                        {
-                            if (row[prop.Name] != DBNull.Value)
-                                prop.SetValue(ser, row[prop.Name], null);
-                        }
-                    }
-                }
-
-                ser.ser_ID = ser_ID;
-                return ser;
-
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-
-        }
-
-        public void syncSerieWithAzure()
-        {
-
-            SER.FillByID(ds.SER_Series, ser_ID);
+            dtSER.FillByID(ds.SER_Series, ser_ID);
 
             foreach (DataRow row in ds.SER_Series.Rows)
             {
-                SERAzure.FillByID(dsAzure.SER_Series, row["id"].ToString());
-
-                if (dsAzure.SER_Series.Count == 0)
+                foreach (var prop in ser.GetType().GetProperties())
                 {
-                    dsAzure.SER_Series.ImportRow(row);
-                    dsAzure.SER_Series.Rows[0].SetAdded();
-                    SERAzure.Update(dsAzure.SER_Series);
-                }
-                else
-                {
-                    foreach (DataColumn col in ds.SER_Series.Columns)
+                    if (row.Table.Columns.Contains(prop.Name))
                     {
-                        DataColumnCollection columns = dsAzure.SER_Series.Columns;
-
-                        if (columns.Contains(col.ColumnName))
-                        {
-                            dsAzure.SER_Series.Rows[0][col.ColumnName] = row[col.ColumnName];
-                        }
+                        if (row[prop.Name] != DBNull.Value)
+                            prop.SetValue(ser, row[prop.Name], null);
                     }
-                    SERAzure.Update(dsAzure.SER_Series);
                 }
-
-                csSEA sea = new csSEA();
-                sea.SEA_SER = ser_ID;
-                sea.syncSeasonWithAzure();
             }
 
+            ser.ser_ID = ser_ID;
+            return ser;
         }
 
     }

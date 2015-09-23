@@ -4849,11 +4849,22 @@ namespace Interface_TheTvDB.dsSeriesTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT SER_ID, SER_Created, SER_Changed, SER_Deleted, SER_theTVDB_ID, SER_Zap2It_ID, SER_imdb_ID, SER_Name_German, SER_Name_English, SER_DescriptionShort_German, SER_DescriptionShort_English, SER_Description_German, SER_Description_English, SER_FirstAired_German, SER_FirstAired_English, SER_Rate, SER_RateCount, SER_imdb_Rate, SER_imdb_RateCount, SER_RunTime, SER_State, SER_Soundtrack, SER_Trailer, SER_ProductionDateFrom, SER_ProductionDateTo, SER_Country, SER_Languages, SER_Awards, SER_Website, SER_Facebook, SER_Twitter, SER_ImageLink, SER_SeasonCount, SER_EpisodesCount, SER_FavouritesCount, SER_DIR FROM dbo.SER_Series";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT SER_ID, SER_Created, SER_Changed, SER_Deleted, SER_theTVDB_ID, SER_Zap2It_ID, SER_imdb_ID, SER_Name_German, SER_Name_English, SER_DescriptionShort_German, SER_DescriptionShort_English, SER_Description_German, SER_Description_English, SER_FirstAired_German, SER_FirstAired_English, SER_Rate, SER_RateCount, SER_imdb_Rate, SER_imdb_RateCount, SER_RunTime, SER_State, SER_Soundtrack, SER_Trailer, SER_ProductionDateFrom, SER_ProductionDateTo, SER_Country, SER_Languages, SER_Awards, SER_Website, SER_Facebook, SER_Twitter, SER_ImageLink, SER_SeasonCount, SER_EpisodesCount, SER_FavouritesCount, SER_DIR FROM dbo.SER_Series
+where SER_ID = @SER_ID";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SER_ID", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "SER_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT top 1 SER_ID FROM SER_Series \r\nwhere SER_TheTVDB_ID = @theTVDB_ID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@theTVDB_ID", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "SER_theTVDB_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4875,6 +4886,42 @@ namespace Interface_TheTvDB.dsSeriesTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsSeries.SER_SeriesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsSeries.SER_SeriesDataTable dataTable = new dsSeries.SER_SeriesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByID(dsSeries.SER_SeriesDataTable dataTable, string SER_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((SER_ID == null)) {
+                throw new global::System.ArgumentNullException("SER_ID");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SER_ID));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsSeries.SER_SeriesDataTable GetDataByID(string SER_ID) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((SER_ID == null)) {
+                throw new global::System.ArgumentNullException("SER_ID");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SER_ID));
+            }
             dsSeries.SER_SeriesDataTable dataTable = new dsSeries.SER_SeriesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -5964,6 +6011,40 @@ namespace Interface_TheTvDB.dsSeriesTableAdapters {
                     global::System.Nullable<int> Original_SER_FavouritesCount, 
                     string Original_SER_DIR) {
             return this.Update(Original_SER_ID, SER_Created, SER_Changed, SER_Deleted, SER_theTVDB_ID, SER_Zap2It_ID, SER_imdb_ID, SER_Name_German, SER_Name_English, SER_DescriptionShort_German, SER_DescriptionShort_English, SER_Description_German, SER_Description_English, SER_FirstAired_German, SER_FirstAired_English, SER_Rate, SER_RateCount, SER_imdb_Rate, SER_imdb_RateCount, SER_RunTime, SER_State, SER_Soundtrack, SER_Trailer, SER_ProductionDateFrom, SER_ProductionDateTo, SER_Country, SER_Languages, SER_Awards, SER_Website, SER_Facebook, SER_Twitter, SER_ImageLink, SER_SeasonCount, SER_EpisodesCount, SER_FavouritesCount, SER_DIR, Original_SER_ID, Original_SER_Created, Original_SER_Changed, Original_SER_Deleted, Original_SER_theTVDB_ID, Original_SER_Zap2It_ID, Original_SER_imdb_ID, Original_SER_Name_German, Original_SER_Name_English, Original_SER_FirstAired_German, Original_SER_FirstAired_English, Original_SER_Rate, Original_SER_RateCount, Original_SER_imdb_Rate, Original_SER_imdb_RateCount, Original_SER_RunTime, Original_SER_State, Original_SER_ProductionDateFrom, Original_SER_ProductionDateTo, Original_SER_Country, Original_SER_Languages, Original_SER_SeasonCount, Original_SER_EpisodesCount, Original_SER_FavouritesCount, Original_SER_DIR);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string getSER_IDwithTHETVDB_ID(string theTVDB_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((theTVDB_ID == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(theTVDB_ID));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
         }
     }
     
