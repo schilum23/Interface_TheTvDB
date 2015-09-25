@@ -266,6 +266,29 @@ namespace Interface_TheTvDB
             set { ser_DIR = value; }
         }
 
+        Dictionary<String, String> comapareNames = new Dictionary<String, String>();
+        public Dictionary<String, String> ComapareNames
+        {
+            get { return comapareNames; }
+        }
+
+        public csSER() {
+
+            ComapareNames.Add("id", "SER_theTVDB_ID");
+            ComapareNames.Add("IMDB_ID", "SER_imdb_ID");
+            ComapareNames.Add("Overview", "SER_DescriptionShort_German");
+            ComapareNames.Add("Rating", "SER_imdb_Rate");
+            ComapareNames.Add("RatingCount", "SER_imdb_RateCount");
+            ComapareNames.Add("Runtime", "SER_RunTime");
+            ComapareNames.Add("SeriesName", "SER_Name_German");
+            ComapareNames.Add("Status", "SER_State");
+            ComapareNames.Add("zap2it_id", "SER_Zap2It_ID");
+            //ComapareNames.Add("banner", "");
+            //ComapareNames.Add("fanart", "");
+            //ComapareNames.Add("poster", "");
+
+        }
+
         public string insertSerie()
         {
 
@@ -308,6 +331,7 @@ namespace Interface_TheTvDB
 
             foreach (DataRow row in ds.SER_Series.Rows)
             {
+                
                 foreach (var prop in this.GetType().GetProperties())
                 {
                     if (row.Table.Columns.Contains(prop.Name) && !row.Table.Columns[prop.Name].ReadOnly)
