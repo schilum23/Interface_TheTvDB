@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Interface_TheTvDB.dsSeriesTableAdapters;
 using System.Data;
+using static Interface_TheTvDB.csFunctions;
 
 namespace Interface_TheTvDB
 {
@@ -12,7 +9,7 @@ namespace Interface_TheTvDB
     {
 
         dsSeries ds = new dsSeries();
-        dsSeriesTableAdapters.SER_SeriesTableAdapter dtSER = new dsSeriesTableAdapters.SER_SeriesTableAdapter();
+        SER_SeriesTableAdapter dtSER = new SER_SeriesTableAdapter();
 
         string ser_ID = "";
         public string SER_ID
@@ -21,15 +18,15 @@ namespace Interface_TheTvDB
             set { ser_ID = value; }
         }
 
-        DateTime ser_Created = DateTime.Now;
-        public DateTime SER_Created
+        DateTime? ser_Created = null;
+        public DateTime? SER_Created
         {
             get { return ser_Created; }
             set { ser_Created = value; }
         }
 
-        DateTime ser_Changed = DateTime.Now;
-        public DateTime SER_Changed
+        DateTime? ser_Changed = null;
+        public DateTime? SER_Changed
         {
             get { return ser_Changed; }
             set { ser_Changed = value; }
@@ -266,32 +263,15 @@ namespace Interface_TheTvDB
             set { ser_DIR = value; }
         }
 
-        Dictionary<String, String> comapareNames = new Dictionary<String, String>();
-        public Dictionary<String, String> ComapareNames
+        DateTime lastChanged = new DateTime(1970, 1, 1);
+        public DateTime LastChanged
         {
-            get { return comapareNames; }
-        }
-
-        public csSER() {
-
-            ComapareNames.Add("id", "SER_theTVDB_ID");
-            ComapareNames.Add("IMDB_ID", "SER_imdb_ID");
-            ComapareNames.Add("Overview", "SER_DescriptionShort_German");
-            ComapareNames.Add("Rating", "SER_imdb_Rate");
-            ComapareNames.Add("RatingCount", "SER_imdb_RateCount");
-            ComapareNames.Add("Runtime", "SER_RunTime");
-            ComapareNames.Add("SeriesName", "SER_Name_German");
-            ComapareNames.Add("Status", "SER_State");
-            ComapareNames.Add("zap2it_id", "SER_Zap2It_ID");
-            //ComapareNames.Add("banner", "");
-            //ComapareNames.Add("fanart", "");
-            //ComapareNames.Add("poster", "");
-
+            get { return lastChanged; }
+            set { lastChanged = value; }
         }
 
         public string insertSerie()
         {
-
             csSER ser = new csSER();
             ser.ser_theTVDB_ID = ser_theTVDB_ID;
             ser_ID = ser.getSER_IDwithTheTVDB_ID();
@@ -301,7 +281,7 @@ namespace Interface_TheTvDB
 
             ser_ID = Guid.NewGuid().ToString();
 
-            dtSER.Insert(ser_ID, ser_Created, ser_Changed, null, ser_theTVDB_ID, ser_Zap2It_ID, ser_imdb_ID,
+            dtSER.Insert(ser_ID, DateTime.Now, DateTime.Now, null, ser_theTVDB_ID, ser_Zap2It_ID, ser_imdb_ID,
                 ser_Name_German, ser_Name_English, ser_DescriptionShort_German, ser_DescriptionShort_English, ser_Description_German,
                 ser_Description_English, ser_FirstAired_German, ser_FirstAired_English, ser_Rate, ser_RateCount, ser_imdb_Rate, ser_imdb_RateCount,
                 ser_RunTime, ser_State, ser_Soundtrack, ser_Trailer, ser_ProductionDateFrom, ser_ProductionDateTo,
@@ -324,54 +304,36 @@ namespace Interface_TheTvDB
             return (returnID == null) ? "" : returnID.ToString();
         }
 
-        public bool updateSerie()
+        public void updateSerie()
         {
-
+            ser_ID = this.getSER_IDwithTheTVDB_ID();
             dtSER.FillByID(ds.SER_Series, ser_ID);
 
-            foreach (DataRow row in ds.SER_Series.Rows)
+            if (ds.SER_Series.Count > 0)
             {
+                DataRow row = ds.SER_Series.Rows[0];
                 
-                foreach (var prop in this.GetType().GetProperties())
-                {
-                    if (row.Table.Columns.Contains(prop.Name) && !row.Table.Columns[prop.Name].ReadOnly)
-                    {
-                        object value = prop.GetValue(this, null);
-                        if (value != null) { 
-                            row[prop.Name] = value;
-                        }
-                    }
-                }
+                if (vDateTime(lastChanged) < vDateTime(row["SER_Changed"]))
+                    return;
 
+                row = getDataRowFromClass(this, row);
                 row["SER_Changed"] = DateTime.Now;
-
                 dtSER.Update(row);
-                return true;
             }
-
-            return false;
-
+            else
+            {
+                this.insertSerie();
+            }
         }
 
         public csSER getSerie()
         {
             csSER ser = new csSER();
-
             dtSER.FillByID(ds.SER_Series, ser_ID);
 
-            foreach (DataRow row in ds.SER_Series.Rows)
-            {
-                foreach (var prop in ser.GetType().GetProperties())
-                {
-                    if (row.Table.Columns.Contains(prop.Name))
-                    {
-                        if (row[prop.Name] != DBNull.Value)
-                            prop.SetValue(ser, row[prop.Name], null);
-                    }
-                }
-            }
-
-            ser.ser_ID = ser_ID;
+            if (ds.SER_Series.Count > 0)
+                ser = (csSER)getClassFromDataRow(ds.SER_Series.Rows[0], ser);
+ 
             return ser;
         }
 

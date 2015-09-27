@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeFile1.cs" />
     <Compile Include="csEPI.cs" />
+    <Compile Include="csFunctions.cs" />
     <Compile Include="csInterface.cs" />
     <Compile Include="csSEA.cs" />
     <Compile Include="csSER.cs" />

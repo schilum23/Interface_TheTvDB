@@ -4,6 +4,7 @@ using System.IO.Compression;
 using System.Net;
 using System.Windows.Forms;
 using System.Xml;
+using static Interface_TheTvDB.csFunctions;
 
 
 namespace Interface_TheTvDB
@@ -13,7 +14,6 @@ namespace Interface_TheTvDB
 
         csInterface inter = new csInterface();
         
-
         public Form1()
         {
             InitializeComponent();
@@ -37,56 +37,87 @@ namespace Interface_TheTvDB
         private void startManual(string seriesID)
         {
             setSeriesDataTheTVDB(inter.downloadZIP("de", seriesID) + "\\" + "de" + ".xml", "de");
-            //getChanges("en", seriesID);
         }
 
         private void setSeriesDataTheTVDB(string path, string lan)
         {
-
             XmlDocument xmlDoc = new XmlDocument();
             xmlDoc.Load(path);
-
             
             XmlNodeList xmlList = xmlDoc.SelectNodes("//Data/Series");
             foreach (XmlNode node in xmlList)
             {
                 //Xml Felder: Actors, Airs_DayOfWeek, Airs_Time, ContentRating, Genre, Network, NetworkID, SeriesID, added, addedBy
-                //banner, tms_wanted_old
+                //banner, tms_wanted_old, lastupdated
 
-                //string ser_Name = (node.SelectSingleNode("SeriesName") != null) ? node.SelectSingleNode("SeriesName").InnerText : "";
-                //if (ser_Name.Contains("Duplicate"))
-                //    return;
+                csSER oSER = new csSER();
+                oSER.SER_theTVDB_ID = xmlNodeInnerText(node, "id");
+                oSER.SER_FirstAired_English = vDateTime(xmlNodeInnerText(node, "FirstAired"));
+                oSER.SER_imdb_ID = xmlNodeInnerText(node, "IMDB_ID");
+                oSER.SER_Languages = xmlNodeInnerText(node, "Language"); 
+                oSER.SER_DescriptionShort_German = xmlNodeInnerText(node, "Overview");
+                oSER.SER_Description_German = xmlNodeInnerText(node, "Overview");
+                oSER.SER_RunTime = vInt(xmlNodeInnerText(node, "Runtime"));
+                oSER.SER_Name_German = xmlNodeInnerText(node, "SeriesName");
+                oSER.SER_State = xmlNodeInnerText(node, "Status");
+                oSER.SER_Zap2It_ID = xmlNodeInnerText(node, "zap2it_id");
+                oSER.LastChanged = vDateTimeUTC(xmlNodeInnerText(node, "lastupdated"));
 
-                csSER ser = new csSER();
-                ser.SER_theTVDB_ID = (inter.vString(node.SelectSingleNode("idddd")) != null) ? node.SelectSingleNode("id").InnerText : "";
-                ser.SER_ID = ser.insertSerie();
-                ser = ser.getSerie();
-                ser.SER_FirstAired_English = inter.vDateTime((node.SelectSingleNode("FirstAired") != null) ? node.SelectSingleNode("FirstAired").InnerText : "");
-                ser.SER_imdb_ID = (node.SelectSingleNode("IMDB_ID") != null) ? node.SelectSingleNode("IMDB_ID").InnerText : "";
+                string fanart = xmlNodeInnerText(node, "fanart");
+                string poster = xmlNodeInnerText(node, "poster");
 
-                string ser_Language = (node.SelectSingleNode("Language") != null) ? node.SelectSingleNode("Language").InnerText : "";
-                if (!ser.SER_Languages.Contains(ser_Language))
-                    ser.SER_Languages += (!string.IsNullOrEmpty(ser.SER_Languages)) ? "|" + ser_Language : ser_Language;
+                oSER.updateSerie();
 
-                ser.SER_DescriptionShort_German = (node.SelectSingleNode("Overview") != null && lan == "de") ? node.SelectSingleNode("Overview").InnerText : ser.SER_Description_German;
-                ser.SER_DescriptionShort_English = (node.SelectSingleNode("Overview") != null && lan == "en") ? node.SelectSingleNode("Overview").InnerText : ser.SER_Description_English;
+                oSER.SER_ImageLink = downloadImage(poster, oSER.SER_theTVDB_ID, "");
 
-                ser.SER_Description_German = (node.SelectSingleNode("Overview") != null && lan == "de") ? node.SelectSingleNode("Overview").InnerText : ser.SER_Description_German;
-                ser.SER_Description_English = (node.SelectSingleNode("Overview") != null && lan == "en") ? node.SelectSingleNode("Overview").InnerText : ser.SER_Description_English;
-                ser.SER_RunTime = inter.vInt((node.SelectSingleNode("Runtime") != null) ? node.SelectSingleNode("Runtime").InnerText : "");
-                ser.SER_Name_German = (node.SelectSingleNode("SeriesName") != null && lan == "de") ? node.SelectSingleNode("SeriesName").InnerText : ser.SER_Name_German;
-                ser.SER_Name_English = (node.SelectSingleNode("SeriesName") != null && lan == "en") ? node.SelectSingleNode("SeriesName").InnerText : ser.SER_Name_English;
-                ser.SER_State = (node.SelectSingleNode("Status") != null) ? node.SelectSingleNode("Status").InnerText : "";
-                ser.SER_Zap2It_ID = (node.SelectSingleNode("zap2it_id") != null) ? node.SelectSingleNode("zap2it_id").InnerText : "";
+                setEpisodesDataTheTVDB(xmlDoc, lan, oSER);
 
-                txtLog.Text += Environment.NewLine + "ID: " + ser.SER_theTVDB_ID + " Name: " + ser.SER_Name_German;
+                txtLog.Text += Environment.NewLine + "ID: " + oSER.SER_theTVDB_ID + " Name: " + oSER.SER_Name_German;
+            }
+        }
 
-                string fanart = (node.SelectSingleNode("fanart") != null) ? node.SelectSingleNode("fanart").InnerText : "";
-                string poster = (node.SelectSingleNode("poster") != null) ? node.SelectSingleNode("poster").InnerText : "";
-                vTest();
+        private void setEpisodesDataTheTVDB(XmlDocument xmlDoc, string lan, csSER oSER)
+        {
 
-                ser.updateSerie();
-                
+            XmlNodeList xmlList = xmlDoc.SelectNodes("//Data/Episode");
+            foreach (XmlNode node in xmlList)
+            {
+                //XML Felder: Combined_episodenumber, Combined_season, DVD_chapter, DVD_discid, DVD_episodenumber, DVD_season, Director, EpImgFlag
+                //GuestStars, ProductionCode, Writer, airsafter_season, airsbefore_episode, airsbefore_season, filename, lastupdated
+                //thumb_added, thumb_height, thumb_width, Rating, RatingCount
+
+                if (oSER == null)
+                    return;
+
+                csSEA sea = new csSEA();
+                sea.SEA_theTVDB_ID = xmlNodeInnerText(node, "seasonid");
+                sea.SEA_SER = oSER.SER_ID;
+                sea.SEA_NumberText = xmlNodeInnerText(node, "SeasonNumber"); 
+                sea.SEA_Number = vInt(xmlNodeInnerText(node, "SeasonNumber"));
+                sea.LastChanged = vDateTimeUTC(xmlNodeInnerText(node, "lastupdated"));
+
+                sea.updateSeason();
+
+                if (string.IsNullOrEmpty(sea.SEA_ID))
+                    return;
+
+                csEPI epi = new csEPI();
+                epi.EPI_theTVDB_ID = xmlNodeInnerText(node, "id");
+                epi.EPI_SEA = sea.SEA_ID;
+                epi.EPI_Name_German = xmlNodeInnerText(node, "EpisodeName");
+                epi.EPI_NumberOfSeason = vInt(xmlNodeInnerText(node, "EpisodeNumber"));
+                epi.EPI_FirstAired_English = vDateTime(xmlNodeInnerText(node, "FirstAired")); 
+                epi.EPI_imdb_ID = xmlNodeInnerText(node, "IMDB_ID");
+                epi.EPI_Languages = xmlNodeInnerText(node, "Language"); 
+                epi.EPI_DescriptionShort_German = xmlNodeInnerText(node, "Overview");
+                epi.EPI_Description_German = xmlNodeInnerText(node, "Overview");
+                epi.EPI_Number = vInt(xmlNodeInnerText(node, "absolute_number"));
+                epi.EPI_NumberText = xmlNodeInnerText(node, "absolute_number");
+                epi.LastChanged = vDateTimeUTC(xmlNodeInnerText(node, "lastupdated"));
+
+                epi.updateEpisode();
+
+                //downloadImage(filename, seriesid, "");
             }
         }
     }

@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Interface_TheTvDB.dsSeriesTableAdapters;
 using System.Data;
+using static Interface_TheTvDB.csFunctions;
 
 namespace Interface_TheTvDB
 {
     class csEPI
     {
         dsSeries ds = new dsSeries();
-        dsSeriesTableAdapters.EPI_EpisodesTableAdapter dtEPI = new dsSeriesTableAdapters.EPI_EpisodesTableAdapter();
+        EPI_EpisodesTableAdapter dtEPI = new EPI_EpisodesTableAdapter();
 
         string epi_ID = "";
         public string EPI_ID
@@ -20,22 +17,22 @@ namespace Interface_TheTvDB
             set { epi_ID = value; }
         }
 
-        DateTime epi_Created = DateTime.Now;
-        public DateTime EPI_Created
+        DateTime? epi_Created = null;
+        public DateTime? EPI_Created
         {
             get { return epi_Created; }
             set { epi_Created = value; }
         }
 
-        DateTime epi_Changed = DateTime.Now;
-        public DateTime EPI_Changed
+        DateTime? epi_Changed = null;
+        public DateTime? EPI_Changed
         {
             get { return epi_Changed; }
             set { epi_Changed = value; }
         }
 
-        DateTime epi_Deleted;
-        public DateTime EPI_Deleted
+        DateTime? epi_Deleted = null;
+        public DateTime? EPI_Deleted
         {
             get { return epi_Deleted; }
             set { epi_Deleted = value; }
@@ -181,85 +178,75 @@ namespace Interface_TheTvDB
             set { epi_Languages = value; }
         }
 
-        //public string insertEpisode()
-        //{
+        DateTime lastChanged = new DateTime(1970, 1, 1);
+        public DateTime LastChanged
+        {
+            get { return lastChanged; }
+            set { lastChanged = value; }
+        }
 
-        //    if (string.IsNullOrEmpty(epi_ID))
-        //        epi_ID = getEPI_IDwithTheTVDB_ID();
+        public string insertEpisode()
+        {
+            if (string.IsNullOrEmpty(epi_ID))
+                epi_ID = getEPI_IDwithTheTVDB_ID();
 
-        //    if (!string.IsNullOrEmpty(epi_ID))
-        //        return epi_ID;
+            if (!string.IsNullOrEmpty(epi_ID))
+                return epi_ID;
 
-        //    epi_ID = Guid.NewGuid().ToString();
+            epi_ID = Guid.NewGuid().ToString();
 
-        //    dtEPI.Insert(epi_ID, epi_Created, epi_Changed, epi_Deleted, epi_theTVDB_ID, epi_imdb_ID, epi_SEA,
-        //        epi_Name_German, epi_Name_English, epi_DescriptionShort_German, epi_DescriptionShort_English,
-        //        epi_Description_German, epi_Description_English, epi_FirstAired_German, epi_FirstAired_English, epi_Rate,
-        //        epi_RateCount, epi_imdb_Rate, epi_imdb_RateCount, epi_WatchedCount, epi_Number, epi_NumberOfSeason, epi_NumberText, epi_Languages);
+            dtEPI.Insert(epi_ID, DateTime.Now, DateTime.Now, null, epi_theTVDB_ID, epi_imdb_ID, epi_SEA,
+                epi_Name_German, epi_Name_English, epi_DescriptionShort_German, epi_DescriptionShort_English,
+                epi_Description_German, epi_Description_English, epi_FirstAired_German, epi_FirstAired_English, epi_Rate,
+                epi_RateCount, epi_imdb_Rate, epi_imdb_RateCount, epi_WatchedCount, epi_Number, epi_NumberOfSeason, epi_NumberText, epi_Languages);
 
-        //    return epi_ID;
+            return epi_ID;
 
-        //}
+        }
 
-        //public string getEPI_IDwithTheTVDB_ID()
-        //{
-        //    object returnID = "";
+        public string getEPI_IDwithTheTVDB_ID()
+        {
+            object returnID = "";
 
-        //    if (string.IsNullOrEmpty(epi_theTVDB_ID))
-        //        return "";
+            if (string.IsNullOrEmpty(epi_theTVDB_ID))
+                return "";
 
-        //    returnID = dtEPI.getEPI_IDwithTHETVDB_ID(epi_theTVDB_ID);
-        //    return (returnID == null) ? "" : returnID.ToString();
-        //}
+            returnID = dtEPI.getEPI_IDwithTHETVDB_ID(epi_theTVDB_ID);
+            return (returnID == null) ? "" : returnID.ToString();
+        }
 
-        //public bool updateEpisode()
-        //{
-  
-        //    dtEPI.FillByID(ds.EPI_Episodes, epi_ID);
+        public void updateEpisode()
+        {
+            epi_ID = this.getEPI_IDwithTheTVDB_ID();
+            dtEPI.FillByID(ds.EPI_Episodes, epi_ID);
 
-        //    foreach (DataRow row in ds.EPI_Episodes.Rows)
-        //    {
-        //        foreach (var prop in this.GetType().GetProperties())
-        //        {
-        //            if (row.Table.Columns.Contains(prop.Name) && !row.Table.Columns[prop.Name].ReadOnly)
-        //            {
-        //                row[prop.Name] = prop.GetValue(this, null);
-        //            }
-        //        }
+            if (ds.EPI_Episodes.Count > 0)
+            {
+                DataRow row = ds.EPI_Episodes.Rows[0];
 
-        //        row["EPI_ChangeDate"] = DateTime.Now;
-        //        dtEPI.Update(row);
-        //        return true;
-        //    }
+                if (vDateTime(lastChanged) < vDateTime(row["EPI_Changed"]))
+                    return;
 
-        //    return false;
+                row = getDataRowFromClass(this, row);
+                row["EPI_Changed"] = DateTime.Now;
+                dtEPI.Update(row);
+            }
+            else
+            {
+                this.insertEpisode();
+            }
+        }
 
-        //}
+        public csEPI getEpisode()
+        {
+            csEPI epi = new csEPI();
 
-        //public csEPI getEpisode()
-        //{
+            dtEPI.FillByID(ds.EPI_Episodes, epi_ID);
+            if (ds.EPI_Episodes.Count > 0)
+                epi = (csEPI)getClassFromDataRow(ds.EPI_Episodes.Rows[0], epi);
 
-        //    csEPI epi = new csEPI();
-
-        //    dtEPI.FillByID(ds.EPI_Episodes, epi_ID);
-
-        //    foreach (DataRow row in ds.EPI_Episodes.Rows)
-        //    {
-        //        foreach (var prop in epi.GetType().GetProperties())
-        //        {
-        //            if (row.Table.Columns.Contains(prop.Name))
-        //            {
-        //                if (row[prop.Name] != DBNull.Value)
-        //                    prop.SetValue(epi, row[prop.Name], null);
-        //            }
-        //        }
-        //    }
-
-        //    epi.epi_ID = epi_ID;
-        //    return epi;
-
-        //}
-
+            return epi;
+        }
     }
 }
 

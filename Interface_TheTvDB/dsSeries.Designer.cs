@@ -6314,11 +6314,28 @@ SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_ID, SEA_SER, SEA_Name_German, SEA_Name_English, SEA_Number, SEA_OrderNumber, SEA_EpisodesCount, SEA_Description_German, SEA_Description_English, SEA_NumberText FROM dbo.SEA_Seasons";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_ID, SEA_SER, SEA_Name_German, SEA_Name_English, SEA_Number, SEA_OrderNumber, SEA_EpisodesCount, SEA_Description_German, SEA_Description_English, SEA_NumberText FROM dbo.SEA_Seasons
+where SEA_id = @id";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "SEA_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_ID, SEA_SER, SEA_Name_German, SEA_Name_English, SEA_Number, SEA_OrderNumber, SEA_EpisodesCount, SEA_Description_German, SEA_Description_English, SEA_NumberText FROM dbo.SEA_Seasons
+where SEA_SER = @ser";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ser", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "SEA_SER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT SEA_ID FROM SEA_Seasons\r\nwhere SEA_theTVDB_ID = @theTVDB_ID";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@theTVDB_ID", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "SEA_theTVDB_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6340,6 +6357,61 @@ SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_I
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsSeries.SEA_SeasonsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsSeries.SEA_SeasonsDataTable dataTable = new dsSeries.SEA_SeasonsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByID(dsSeries.SEA_SeasonsDataTable dataTable, string id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id == null)) {
+                throw new global::System.ArgumentNullException("id");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(id));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySER(dsSeries.SEA_SeasonsDataTable dataTable, string ser) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((ser == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ser));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsSeries.SEA_SeasonsDataTable GetDataBySER(string ser) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((ser == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ser));
+            }
             dsSeries.SEA_SeasonsDataTable dataTable = new dsSeries.SEA_SeasonsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -6859,6 +6931,40 @@ SELECT SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_I
                     string Original_SEA_NumberText) {
             return this.Update(Original_SEA_ID, SEA_Created, SEA_Changed, SEA_Deleted, SEA_theTVDB_ID, SEA_imdb_ID, SEA_SER, SEA_Name_German, SEA_Name_English, SEA_Number, SEA_OrderNumber, SEA_EpisodesCount, SEA_Description_German, SEA_Description_English, SEA_NumberText, Original_SEA_ID, Original_SEA_Created, Original_SEA_Changed, Original_SEA_Deleted, Original_SEA_theTVDB_ID, Original_SEA_imdb_ID, Original_SEA_SER, Original_SEA_Name_German, Original_SEA_Name_English, Original_SEA_Number, Original_SEA_OrderNumber, Original_SEA_EpisodesCount, Original_SEA_NumberText);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string getSEA_IDwithTHETVDB_ID(string theTVDB_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((theTVDB_ID == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(theTVDB_ID));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
+        }
     }
     
     /// <summary>
@@ -7226,11 +7332,28 @@ SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_ID, EPI_SEA, EPI_Name_German, EPI_Name_English, EPI_DescriptionShort_German, EPI_DescriptionShort_English, EPI_Description_German, EPI_Description_English, EPI_FirstAired_German, EPI_FirstAired_English, EPI_Rate, EPI_RateCount, EPI_imdb_Rate, EPI_imdb_RateCount, EPI_WatchedCount, EPI_Number, EPI_NumberOfSeason, EPI_NumberText, EPI_Languages FROM dbo.EPI_Episodes";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_ID, EPI_SEA, EPI_Name_German, EPI_Name_English, EPI_DescriptionShort_German, EPI_DescriptionShort_English, EPI_Description_German, EPI_Description_English, EPI_FirstAired_German, EPI_FirstAired_English, EPI_Rate, EPI_RateCount, EPI_imdb_Rate, EPI_imdb_RateCount, EPI_WatchedCount, EPI_Number, EPI_NumberOfSeason, EPI_NumberText, EPI_Languages FROM dbo.EPI_Episodes
+WHERE (epi_id = @id)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.NVarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "EPI_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_ID, EPI_SEA, EPI_Name_German, EPI_Name_English, EPI_DescriptionShort_German, EPI_DescriptionShort_English, EPI_Description_German, EPI_Description_English, EPI_FirstAired_German, EPI_FirstAired_English, EPI_Rate, EPI_RateCount, EPI_imdb_Rate, EPI_imdb_RateCount, EPI_WatchedCount, EPI_Number, EPI_NumberOfSeason, EPI_NumberText, EPI_Languages FROM dbo.EPI_Episodes
+where EPI_SEA = @SEA";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SEA", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "EPI_SEA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT EPI_id FROM EPI_Episodes\r\nwhere epi_theTVDB_ID = @theTvDB_ID";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@theTvDB_ID", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "EPI_theTVDB_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7252,6 +7375,78 @@ SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_I
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual dsSeries.EPI_EpisodesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsSeries.EPI_EpisodesDataTable dataTable = new dsSeries.EPI_EpisodesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByID(dsSeries.EPI_EpisodesDataTable dataTable, string id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id == null)) {
+                throw new global::System.ArgumentNullException("id");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(id));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsSeries.EPI_EpisodesDataTable GetDataByID(string id) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((id == null)) {
+                throw new global::System.ArgumentNullException("id");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(id));
+            }
+            dsSeries.EPI_EpisodesDataTable dataTable = new dsSeries.EPI_EpisodesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySEA(dsSeries.EPI_EpisodesDataTable dataTable, string SEA) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((SEA == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SEA));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual dsSeries.EPI_EpisodesDataTable GetDataBySEA(string SEA) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((SEA == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(SEA));
+            }
             dsSeries.EPI_EpisodesDataTable dataTable = new dsSeries.EPI_EpisodesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -8066,6 +8261,40 @@ SELECT EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_I
                     string Original_EPI_NumberText, 
                     string Original_EPI_Languages) {
             return this.Update(Original_EPI_ID, EPI_Created, EPI_Changed, EPI_Deleted, EPI_theTVDB_ID, EPI_imdb_ID, EPI_SEA, EPI_Name_German, EPI_Name_English, EPI_DescriptionShort_German, EPI_DescriptionShort_English, EPI_Description_German, EPI_Description_English, EPI_FirstAired_German, EPI_FirstAired_English, EPI_Rate, EPI_RateCount, EPI_imdb_Rate, EPI_imdb_RateCount, EPI_WatchedCount, EPI_Number, EPI_NumberOfSeason, EPI_NumberText, EPI_Languages, Original_EPI_ID, Original_EPI_Created, Original_EPI_Changed, Original_EPI_Deleted, Original_EPI_theTVDB_ID, Original_EPI_imdb_ID, Original_EPI_SEA, Original_EPI_Name_German, Original_EPI_Name_English, Original_EPI_FirstAired_German, Original_EPI_FirstAired_English, Original_EPI_Rate, Original_EPI_RateCount, Original_EPI_imdb_Rate, Original_EPI_imdb_RateCount, Original_EPI_WatchedCount, Original_EPI_Number, Original_EPI_NumberOfSeason, Original_EPI_NumberText, Original_EPI_Languages);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string getEPI_IDwithTHETVDB_ID(string theTvDB_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((theTvDB_ID == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(theTvDB_ID));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
+            }
         }
     }
     
