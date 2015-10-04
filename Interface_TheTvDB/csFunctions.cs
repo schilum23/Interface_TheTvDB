@@ -69,7 +69,7 @@ namespace Interface_TheTvDB
         }
 
         // Bilder runterladen
-        public static string downloadImage(string imagePath, string id, string type)
+        public static string downloadImage(string imagePath, string id, string type, string folder, string newFilename)
         {
             if (String.IsNullOrEmpty(imagePath))
                 return "";
@@ -85,20 +85,20 @@ namespace Interface_TheTvDB
                 System.IO.Directory.CreateDirectory(path);
 
             // Prüfen ob das Bild schon existiert
-            if (File.Exists(path + localFilename))
-                return path + localFilename;
+            if (File.Exists(path + newFilename))
+                return path + newFilename;
 
             // Bild runterladen
             using (WebClient client = new WebClient())
             {
-                client.DownloadFile(link, path + localFilename);
+                client.DownloadFile(link, path + newFilename);
 
                 NetworkCredential cred = new NetworkCredential("olro", "123user!");
 
 
                 WebClient ftp = new WebClient();
                 ftp.Credentials = cred;
-                ftp.UploadFile("ftp://217.160.178.136/Images/" + localFilename, path + localFilename);
+                ftp.UploadFile("ftp://217.160.178.136/Images/" + folder + "/" + newFilename, path + newFilename);
             }
 
             return path + localFilename;
